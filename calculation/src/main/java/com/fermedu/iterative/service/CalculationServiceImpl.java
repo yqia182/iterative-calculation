@@ -1,6 +1,9 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.dao.MethodStep;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Program: iterative-calculation
@@ -12,7 +15,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculationServiceImpl implements CalculationService {
     @Override
-    public void doCalculate() {
-
+    public void doCalculate(List<MethodStep> methodStepList) {
+        for (MethodStep methodStep : methodStepList) {
+            Object eachResult = 
+        }
     }
 }
