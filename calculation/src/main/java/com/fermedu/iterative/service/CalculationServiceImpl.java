@@ -17,7 +17,7 @@ public class CalculationServiceImpl implements CalculationService {
     @Override
     public void doCalculate(List<MethodStep> methodStepList) {
         for (MethodStep methodStep : methodStepList) {
-            Object eachResult = 
+
         }
     }
 }

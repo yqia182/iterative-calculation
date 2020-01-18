@@ -12,13 +12,12 @@ import java.math.BigDecimal;
  * @Include:
  **/
 public enum GrowthModelParamEnum {
-    MAX_GROWTH_RATE(new VariableParam("Maximum Growth Rate", BigDecimal.valueOf())),
     ;
 
 
     private VariableParam variableParam;
 
-    public GrowthModelParamEnum(VariableParam variableParam) {
+    GrowthModelParamEnum(VariableParam variableParam) {
         this.variableParam = variableParam;
     }
 }
