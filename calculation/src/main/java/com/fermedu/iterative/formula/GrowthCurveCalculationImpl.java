@@ -1,5 +1,6 @@
 package com.fermedu.iterative.formula;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -22,20 +23,27 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
      */
     private SampleData sampleData;
 
-    private double[] coefficient;
+    private FormulaTrait formulaTrait;
 
 
     /** Based on the formula given, calculate once */
-    private void calculateOncePerFormula() {
-        System.out.println(JsonUtil.toJson(this.sampleData.getXValueList()));
-        System.out.println(JsonUtil.toJson(this.sampleData.getYValueList()));
+    private void calculateOncePerFormula(double xOne, double yOne) {
+        double yCalculated = 0d;
+
+
     }
 
     /** 执行计算的主方法 */
     @Override
     public void run(SampleData sampleData) {
         this.sampleData = sampleData;
-        this.calculateOncePerFormula();
+        double xOne = 0d;
+        double yOne = 0d;
+        for (int xIndex = 0; xIndex < this.sampleData.getXValueList().size(); xIndex++) {
+            xOne = this.sampleData.getXValueList().get(xIndex);
+            yOne = this.sampleData.getYValueList().get(xIndex);
+        }
+        this.calculateOncePerFormula(xOne, yOne);
 
     }
 }
