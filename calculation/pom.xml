@@ -64,6 +64,12 @@
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.qamatic</groupId>
+            <artifactId>mintleaf</artifactId>
+            <version>${mintleaf-persistence.version}</version>
+        </dependency>
+
     </dependencies>
 
 

@@ -10,7 +10,7 @@ import com.google.gson.GsonBuilder;
  * @Description:
  * @Include:
  **/
-public class Jsonutil {
+public class JsonUtil {
     public static String toJson(Object object) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.setPrettyPrinting();
