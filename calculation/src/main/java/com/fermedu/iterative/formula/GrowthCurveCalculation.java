@@ -1,5 +1,6 @@
 package com.fermedu.iterative.formula;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 
 /**
@@ -10,5 +11,5 @@ import com.fermedu.iterative.dao.SampleData;
  * @Include:
  **/
 public interface GrowthCurveCalculation {
-    void run(SampleData sampleData);
+    FormulaTrait calculateOneSampleSet(SampleData sampleData);
 }

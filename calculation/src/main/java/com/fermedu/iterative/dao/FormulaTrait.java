@@ -12,11 +12,13 @@ import lombok.Data;
 @Data
 public class FormulaTrait {
 
-    private double lagTime;
+    private double lagTime; // lag time
 
-    private double rate;
+    private double rate; // maximum growth rate - μ max
 
+    private double maxOD; // maxOD
 
+    private double minOD; // minOD
 
     private double coefficient;
 }

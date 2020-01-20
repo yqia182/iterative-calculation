@@ -2,14 +2,13 @@ package com.fermedu.iterative.formula;
 
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.persistence.SampleDataArranger;
+import org.apache.commons.math3.util.FastMath;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Program: iterative-calculation
@@ -28,6 +27,12 @@ class GrowthCurveCalculationImplTest {
 
     @Autowired
     private SampleDataArranger sampleDataArranger;
+
+    @Test
+    void tempOnce() {
+        double result = FastMath.log(FastMath.E,10d);
+        System.out.println(result);
+    }
 
     @Test
     void run() {
