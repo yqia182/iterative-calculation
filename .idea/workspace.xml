@@ -2,104 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bbb716b-3691-4b4e-bf3f-7d5f5a404b03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/iterative-calculation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javolution_javolution_5_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jscience_jscience_4_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_vintage_junit_vintage_engine_5_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_qamatic_mintleaf_1_8_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/MathUtil/RegressionMathTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/calculation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/iterative-calculation (1).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/target/classes/META-INF/calculation.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/target/test-classes/META-INF/calculation.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/target/test-classes/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/test-classes/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/calculation/target/" />
@@ -119,94 +27,21 @@
     <favorites_list name="iterative-calculation" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#874#875#0" expanded="true" />
-                <element signature="e#925#926#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="95" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="94" lean-forward="true" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>formulaTraitLoader</find>
+      <find>coefficie</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,13 +54,14 @@
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" />
-        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionUtil.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" />
+        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/MathUtil/RegressionMathTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java" />
+        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java" />
       </list>
     </option>
   </component>
@@ -280,6 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -367,16 +204,23 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.fermedu.iterative.MathUtil" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.fermedu.iterative.service" />
     </key>
@@ -393,7 +237,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GrowthCurveCalculationImplTest.tempOnce">
+  <component name="RunManager" selected="JUnit.GrowthCurveCalculationImplTest.run">
+    <configuration name="GrowthCurveCalculationImplTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.formula.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.formula" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.formula.GrowthCurveCalculationImplTest" />
+      <option name="METHOD_NAME" value="run" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GrowthCurveCalculationImplTest.tempOnce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="iterative-calculation (1)" />
       <extension name="coverage">
@@ -410,6 +270,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegressionMathTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.MathUtil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.MathUtil" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.MathUtil.RegressionMathTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegressionMathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.MathUtil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.MathUtil" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.MathUtil.RegressionMathTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegressionMathTest.coefficientOfDeterminationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.MathUtil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.MathUtil" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.MathUtil.RegressionMathTest" />
+      <option name="METHOD_NAME" value="coefficientOfDeterminationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CalculationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="calculation" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fermedu.iterative.CalculationApplication" />
@@ -419,6 +325,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GrowthCurveCalculationImplTest.run" />
+        <item itemvalue="JUnit.RegressionMathTest.coefficientOfDeterminationTest" />
+        <item itemvalue="JUnit.RegressionMathTest (1)" />
+        <item itemvalue="JUnit.RegressionMathTest" />
         <item itemvalue="JUnit.GrowthCurveCalculationImplTest.tempOnce" />
       </list>
     </recent_temporary>
@@ -435,13 +345,11 @@
       <updated>1579475106848</updated>
       <workItem from="1579475108103" duration="1390000" />
       <workItem from="1579478375759" duration="14661000" />
+      <workItem from="1579516144669" duration="5167000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 15h 02m 07s.xml">
-      <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 16h 11m 36s.xml">
       <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
     </history-entry>
@@ -454,15 +362,32 @@
     <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 16h 16m 38s.xml">
       <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RegressionMathTest_(1) - 2020.01.20 at 23h 59m 31s.xml">
+      <configuration name="RegressionMathTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegressionMathTest_coefficientOfDeterminationTest - 2020.01.21 at 00h 01m 04s.xml">
+      <configuration name="RegressionMathTest.coefficientOfDeterminationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegressionMathTest_coefficientOfDeterminationTest - 2020.01.21 at 00h 02m 08s.xml">
+      <configuration name="RegressionMathTest.coefficientOfDeterminationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegressionMathTest_coefficientOfDeterminationTest - 2020.01.21 at 01h 06m 55s.xml">
+      <configuration name="RegressionMathTest.coefficientOfDeterminationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GrowthCurveCalculationImplTest_run - 2020.01.21 at 01h 29m 23s.xml">
+      <configuration name="GrowthCurveCalculationImplTest.run" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GrowthCurveCalculationImplTest_run - 2020.01.21 at 01h 31m 07s.xml">
+      <configuration name="GrowthCurveCalculationImplTest.run" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16051000" />
+    <option name="totallyTimeSpent" value="21218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4923077" visible="true" weight="0.24979724" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4923077" weight="0.24979724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -470,11 +395,10 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50769234" side_tool="true" weight="0.24979724" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3298969" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47250858" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -485,8 +409,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="right" id="R Graphics" />
-      <window_info anchor="right" id="R Packages" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3298969" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -498,6 +421,8 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" />
+      <window_info anchor="right" id="R Packages" order="11" />
+      <window_info anchor="right" id="R Graphics" order="12" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,51 +453,17 @@
     <entry file="file://$PROJECT_DIR$/calculation/calculation.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="32" selection-start-line="32" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/summary/SumOfSquares.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/summary/SumOfSquares.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/AbstractUnivariateStatistic.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/AbstractUnivariateStatistic.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -583,23 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="94" lean-forward="true" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -607,21 +481,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java">
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        <state relative-caret-position="121">
+          <caret line="78" column="154" lean-forward="true" selection-start-line="78" selection-start-column="154" selection-end-line="78" selection-end-column="154" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java">
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="219">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" lean-forward="true" selection-start-line="13" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/MathUtil/RegressionMathTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,9 @@
 package com.fermedu.iterative.formula;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.persistence.SampleDataArranger;
+import com.fermedu.iterative.util.JsonUtil;
 import org.apache.commons.math3.util.FastMath;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -36,8 +38,14 @@ class GrowthCurveCalculationImplTest {
 
     @Test
     void run() {
+        FormulaTrait formulaTrait = new FormulaTrait();
+        formulaTrait.setLagTime(100d);
+        formulaTrait.setMaxOD(1.6d);
+        formulaTrait.setMinOD(0.0d);
+        formulaTrait.setRate(0.00153333333d);
 
         SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("1");
-        growthCurveCalculation.run(sampleData);
+        FormulaTrait formulaTraitResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait,sampleData);
+        System.out.println(JsonUtil.toJson(formulaTraitResult));
     }
 }

@@ -11,5 +11,5 @@ import com.fermedu.iterative.dao.SampleData;
  * @Include:
  **/
 public interface GrowthCurveCalculation {
-    FormulaTrait calculateOneSampleSet(SampleData sampleData);
+    FormulaTrait calculateOneSampleSet(FormulaTrait formulaTrait, SampleData sampleData);
 }

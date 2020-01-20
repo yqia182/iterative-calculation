@@ -3,7 +3,6 @@ package com.fermedu.iterative.formula;
 import com.fermedu.iterative.MathUtil.RegressionMath;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
-import com.fermedu.iterative.service.FormulaLoadingService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.math3.util.FastMath;
 import org.springframework.stereotype.Service;
@@ -29,11 +28,7 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
 
 
 
-    private FormulaLoadingService formulaLoadingService;
 
-    private FormulaTrait formulaTraitLoader() {
-        return formulaLoadingService.load();
-    }
 
     /**
      * Based on the formula given, calculate once
@@ -79,7 +74,7 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
         final double maxOD_minus_minOD_times_log10_plus_1 = maxOD_minus_minOD * ln10 + 1; // ((maxOD - minOD)*log10)+1
         final double mumax_times_e1_times_lag_minus_time = mumax * Math.E * (lag - time); // μmax*e(1)*(lag-t)
         final double exponential_result_1 = mumax_times_e1_times_lag_minus_time / maxOD_minus_minOD_times_log10_plus_1; // μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1
-        final double negative_e_exponential = Math.pow(-Math.E, exponential_result_1); // -e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1)
+        final double negative_e_exponential = - Math.pow(Math.E, exponential_result_1); // -e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1)
         final double e_exponential = Math.pow(Math.E, negative_e_exponential); // e^(-e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1))
         final double result = minOD + maxOD_minus_minOD * e_exponential;// mindOD + (maxOD - minOD) * e^(-e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1))
         return result;
@@ -94,9 +89,8 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
      * @return
      */
     @Override
-    public FormulaTrait calculateOneSampleSet(SampleData sampleData) {
+    public FormulaTrait calculateOneSampleSet(FormulaTrait formulaTrait,SampleData sampleData) {
         this.sampleData = sampleData;
-        FormulaTrait formulaTrait = this.formulaTraitLoader();
         FormulaTrait formulaTraitResult = this.calculateSeriesPerGompertzFormula(formulaTrait);
         return formulaTraitResult;
     }

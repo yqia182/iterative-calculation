@@ -1,5 +1,6 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class TaskSchedulerImpl implements TaskScheduler {
+    private FormulaLoadingService formulaLoadingService;
+
+    private FormulaTrait formulaTraitLoader() {
+        return formulaLoadingService.load();
+    }
+
     @Override
     public void run() {
 
