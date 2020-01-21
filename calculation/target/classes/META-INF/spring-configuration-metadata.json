@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "iterative",
+      "type": "com.fermedu.iterative.properties.IterativeCalculationProperties",
+      "sourceType": "com.fermedu.iterative.properties.IterativeCalculationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "iterative.coefficient-selective-percentile",
+      "type": "java.lang.Double",
+      "sourceType": "com.fermedu.iterative.properties.IterativeCalculationProperties",
+      "defaultValue": 0.25
+    },
+    {
+      "name": "iterative.range-divider-granularity",
+      "type": "java.lang.Double",
+      "sourceType": "com.fermedu.iterative.properties.IterativeCalculationProperties",
+      "defaultValue": 0.1
+    }
+  ],
+  "hints": []
+}
