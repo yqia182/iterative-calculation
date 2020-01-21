@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bbb716b-3691-4b4e-bf3f-7d5f5a404b03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/VariableParam.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/dao/FormulaTraitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TraitRangeAdvisorImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/iterative-calculation (1).iml" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/iterative-calculation (1).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/enumeration/GrowthModelParamEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/dao/FormulaTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/dao/FormulaTrait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/dao/VariableParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/enumeration/GrowthModelParamEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/formula/GrowthModel.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/calculation/target/" />
@@ -24,12 +35,12 @@
     <favorites_list name="iterative-calculation" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+            <state relative-caret-position="234">
+              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,14 +48,38 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TraitRangeAdvisorImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="201">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -54,9 +89,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -75,7 +110,6 @@
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaConstant.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionUtil.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" />
@@ -84,8 +118,13 @@
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java" />
+        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/dao/FormulaTraitTest.java" />
+        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TraitRangeAdvisorImplTest.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" />
       </list>
     </option>
   </component>
@@ -140,6 +179,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,8 +267,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,6 +279,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.fermedu.iterative.service" />
+      <recent name="com.fermedu.iterative.dao" />
       <recent name="com.fermedu.iterative.MathUtil" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -261,7 +302,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GrowthCurveCalculationImplTest.run">
+  <component name="RunManager" selected="JUnit.TraitRangeAdvisorImplTest.selectBestCoefficient">
+    <configuration name="FormulaTraitTest.compareTo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.dao.FormulaTraitTest" />
+      <option name="METHOD_NAME" value="compareTo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GrowthCurveCalculationImplTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="iterative-calculation (1)" />
       <extension name="coverage">
@@ -278,38 +335,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrowthCurveCalculationImplTest.tempOnce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="iterative-calculation (1)" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fermedu.iterative.formula.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fermedu.iterative.formula" />
-      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.formula.GrowthCurveCalculationImplTest" />
-      <option name="METHOD_NAME" value="tempOnce" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RegressionMathTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="iterative-calculation (1)" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fermedu.iterative.MathUtil.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fermedu.iterative.MathUtil" />
-      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.MathUtil.RegressionMathTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegressionMathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="iterative-calculation (1)" />
       <extension name="coverage">
         <pattern>
@@ -340,6 +366,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.service" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.service.TraitRangeAdvisorImplTest" />
+      <option name="METHOD_NAME" value="selectBestCoefficient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CalculationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="calculation" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fermedu.iterative.CalculationApplication" />
@@ -349,11 +391,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TraitRangeAdvisorImplTest.selectBestCoefficient" />
+        <item itemvalue="JUnit.FormulaTraitTest.compareTo" />
         <item itemvalue="JUnit.GrowthCurveCalculationImplTest.run" />
         <item itemvalue="JUnit.RegressionMathTest.coefficientOfDeterminationTest" />
         <item itemvalue="JUnit.RegressionMathTest (1)" />
-        <item itemvalue="JUnit.RegressionMathTest" />
-        <item itemvalue="JUnit.GrowthCurveCalculationImplTest.tempOnce" />
       </list>
     </recent_temporary>
   </component>
@@ -371,49 +413,50 @@
       <workItem from="1579478375759" duration="14661000" />
       <workItem from="1579516144669" duration="5167000" />
       <workItem from="1579562461361" duration="1437000" />
+      <workItem from="1579565776653" duration="6055000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 16h 11m 36s.xml">
-      <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 16h 14m 13s.xml">
-      <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 16h 15m 50s.xml">
-      <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GrowthCurveCalculationImplTest_tempOnce - 2020.01.20 at 16h 16m 38s.xml">
-      <configuration name="GrowthCurveCalculationImplTest.tempOnce" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegressionMathTest_(1) - 2020.01.20 at 23h 59m 31s.xml">
-      <configuration name="RegressionMathTest (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegressionMathTest_coefficientOfDeterminationTest - 2020.01.21 at 00h 01m 04s.xml">
-      <configuration name="RegressionMathTest.coefficientOfDeterminationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegressionMathTest_coefficientOfDeterminationTest - 2020.01.21 at 00h 02m 08s.xml">
-      <configuration name="RegressionMathTest.coefficientOfDeterminationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegressionMathTest_coefficientOfDeterminationTest - 2020.01.21 at 01h 06m 55s.xml">
-      <configuration name="RegressionMathTest.coefficientOfDeterminationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GrowthCurveCalculationImplTest_run - 2020.01.21 at 01h 29m 23s.xml">
-      <configuration name="GrowthCurveCalculationImplTest.run" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GrowthCurveCalculationImplTest_run - 2020.01.21 at 01h 31m 07s.xml">
       <configuration name="GrowthCurveCalculationImplTest.run" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FormulaTraitTest_compareTo - 2020.01.21 at 14h 21m 20s.xml">
+      <configuration name="FormulaTraitTest.compareTo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTraitTest_compareTo - 2020.01.21 at 14h 46m 41s.xml">
+      <configuration name="FormulaTraitTest.compareTo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTraitTest_compareTo - 2020.01.21 at 14h 48m 02s.xml">
+      <configuration name="FormulaTraitTest.compareTo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TraitRangeAdvisorImplTest_selectBestCoefficient - 2020.01.21 at 14h 59m 53s.xml">
+      <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TraitRangeAdvisorImplTest_selectBestCoefficient - 2020.01.21 at 15h 03m 06s.xml">
+      <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TraitRangeAdvisorImplTest_selectBestCoefficient - 2020.01.21 at 15h 04m 02s.xml">
+      <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TraitRangeAdvisorImplTest_selectBestCoefficient - 2020.01.21 at 15h 10m 32s.xml">
+      <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TraitRangeAdvisorImplTest_selectBestCoefficient - 2020.01.21 at 15h 15m 53s.xml">
+      <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TraitRangeAdvisorImplTest_selectBestCoefficient - 2020.01.21 at 15h 20m 27s.xml">
+      <configuration name="TraitRangeAdvisorImplTest.selectBestCoefficient" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22655000" />
+    <option name="totallyTimeSpent" value="28710000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4923077" visible="true" weight="0.24979724" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4923077" visible="true" weight="0.24979724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -423,7 +466,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30584192" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47250858" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -470,20 +513,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calculation/calculation.iml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/summary/SumOfSquares.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/AbstractUnivariateStatistic.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/summary/SumOfSquares.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/AbstractUnivariateStatistic.class" />
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/SampleData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -502,13 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="78" column="154" lean-forward="true" selection-start-line="78" selection-start-column="154" selection-end-line="78" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -582,21 +606,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+        <state relative-caret-position="234">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/enumeration/GrowthModelParamEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/dao/FormulaTraitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TraitRangeAdvisorImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="201">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/IDE/Java/jdk1.8.0_202/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>

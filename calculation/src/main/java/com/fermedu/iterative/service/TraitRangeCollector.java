@@ -14,6 +14,6 @@ import java.util.List;
 public interface TraitRangeCollector {
     List<FormulaTrait> loadTraitList();
 
-    List<FormulaTrait> saveTraitList(List<FormulaTrait> formulaTraitList);
+    List<FormulaTrait> saveToTraitList(FormulaTrait formulaTrait);
 
 }

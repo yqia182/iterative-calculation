@@ -10,7 +10,7 @@ import lombok.Data;
  * @Include:
  **/
 @Data
-public class FormulaTrait {
+public class FormulaTrait implements Comparable<FormulaTrait>{
 
     private double lagTime; // lag time
 
@@ -21,4 +21,16 @@ public class FormulaTrait {
     private double minOD; // minOD
 
     private double coefficient;
+
+    /**
+     * step for ordering, based on the level of coefficient
+     * this method will put higher coefficient at better priority.
+     * */
+    @Override
+    public int compareTo(FormulaTrait formulaTraitParam) {
+        final Double thisCoefficient = new Double(this.coefficient);
+        final Double coefficientParam = new Double(formulaTraitParam.getCoefficient());
+        return coefficientParam.compareTo(thisCoefficient);
+    }
+
 }
