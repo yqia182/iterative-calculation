@@ -73,7 +73,7 @@ public class TraitRangeAdvisorImpl implements TraitRangeAdvisor {
         // 把每个参数等分
         // from the pool, based on the granularity, divide the pool into multiple aliquots
         // todo
-        double[] lagFurtherDividedList = ;
+        double[] lagFurtherDividedList;
 
         // 把等分结果重新排列组合成 N^4 个结果，组成list返回
         // combine all aliquots from every parameters into a list

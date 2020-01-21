@@ -2,7 +2,10 @@ package com.fermedu.iterative.service;
 
 import com.fermedu.iterative.dao.FormulaTrait;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Program: iterative-calculation
@@ -14,10 +17,12 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class TaskSchedulerImpl implements TaskScheduler {
-    private FormulaLoadingService formulaLoadingService;
 
-    private FormulaTrait formulaTraitLoader() {
-        return formulaLoadingService.load();
+    @Autowired
+    private TraitRangeCollector traitRangeCollector;
+
+    private List<FormulaTrait> formulaTraitLoader() {
+        return traitRangeCollector.loadTraitList();
     }
 
     @Override
