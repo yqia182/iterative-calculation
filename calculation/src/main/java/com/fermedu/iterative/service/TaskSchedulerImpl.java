@@ -1,6 +1,9 @@
 package com.fermedu.iterative.service;
 
 import com.fermedu.iterative.dao.FormulaTrait;
+import com.fermedu.iterative.dao.SampleData;
+import com.fermedu.iterative.formula.GrowthCurveCalculation;
+import com.fermedu.iterative.persistence.SampleDataArranger;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,15 +21,79 @@ import java.util.List;
 @Slf4j
 public class TaskSchedulerImpl implements TaskScheduler {
 
+    /**
+     * load and save a formula trait list
+     */
     @Autowired
     private TraitRangeCollector traitRangeCollector;
 
+    @Autowired
+    private SampleDataArranger sampleDataArranger;
+
+    @Autowired
+    private GrowthCurveCalculation growthCurveCalculation;
+
+
+
+    /**
+     * load a formula trait list
+     */
     private List<FormulaTrait> formulaTraitLoader() {
         return traitRangeCollector.loadTraitList();
     }
 
-    @Override
-    public void run() {
+    /**
+     * load all sample names
+     */
+    private List<String> sampleDataArranger() {
+        return sampleDataArranger.readSampleNameList();
+    }
 
+
+
+
+
+    /***
+    * @Description runOneSample loop the given times. For each time,
+     * there is a formula trait(which has lag, rate, maxOD and minOD).
+     * Then put the formula trait and sample data together,
+     * so as to calculate the coefficient for this sample data& formula trait.
+    * @Params * @param sampleData
+    * @Return void
+    **/
+    private void runOneSample(SampleData sampleData) {
+        /** loop for the given times */
+        for (int calLoop = 0; calLoop <= 1000; calLoop++) {
+            /** load a formula list, which has been optimized */
+            List<FormulaTrait> formulaTraitList = this.formulaTraitLoader();
+
+            for (FormulaTrait formulaTrait : formulaTraitList) {
+
+                /** calculate all coefficient, and save those to the list */
+                final FormulaTrait eachCoefficientResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait, sampleData);                /** save the list to somewhere */
+
+                /** save the list to somewhere */
+                traitRangeCollector.saveToTraitList(eachCoefficientResult);
+            }
+        }
+    }
+
+    private void formulaTraitWithCoefficientSaver(List<FormulaTrait> coefficientHolder) {
+
+    }
+
+    /***
+     * @Description loop all samples
+     * @Params * @param
+     * @Return void
+     **/
+    @Override
+    public void runAllSamples() {
+        /** loop for the number of the samples */
+        List<String> sampleNames = this.sampleDataArranger();
+        for (String sampleName : sampleNames) {
+            SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName(sampleName);
+            this.runOneSample(sampleData);
+        }
     }
 }

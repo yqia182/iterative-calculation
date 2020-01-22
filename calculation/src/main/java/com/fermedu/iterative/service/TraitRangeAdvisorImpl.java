@@ -1,5 +1,6 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.MathUtil.ParamRangeDivisionMath;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.properties.IterativeCalculationProperties;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Program: iterative-calculation
@@ -66,20 +68,39 @@ public class TraitRangeAdvisorImpl implements TraitRangeAdvisor {
      **/
     @Override
     public List<FormulaTrait> generateFormulaListByGivenParamRange(List<FormulaTrait> selectedFormulaTraitList) {
-        /** how small each divided range will be */
+        /** how small each divided range will be
+         * If granularity is 0.1d, each parameter,
+         * e.g. lag will be divided into 1/0.1 +1 = 6 suggested new params */
         final double divisionGranularity = calculationProperties.getRangeDividerGranularity();
         // 算出每个参数的范围.
         // figure out the total range (pool), from which N aliquots of the parameter are suggested
         // 把每个参数等分
         // from the pool, based on the granularity, divide the pool into multiple aliquots
-        // todo
-        double[] lagFurtherDividedList;
+
+        final double[] lagArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getLagTime()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
+        final double[] rateArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getRate()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
+        final double[] minODArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getMinOD()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
+        final double[] maxODArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getMaxOD()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
+
+        final double[] lagFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(lagArray,divisionGranularity);
+        final double[] rateFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(rateArray,divisionGranularity);
+        final double[] minODFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(minODArray,divisionGranularity);
+        final double[] maxODFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(maxODArray, divisionGranularity);
 
         // 把等分结果重新排列组合成 N^4 个结果，组成list返回
         // combine all aliquots from every parameters into a list
+        List<FormulaTrait> formulaTraitResultList = new ArrayList<>();
+        for (double lag : lagFurtherDividedArray) {
+            for (double rate : rateFurtherDividedArray) {
+                for (double minOD : minODFurtherDividedArray) {
+                    for (double maxOD : maxODFurtherDividedArray) {
+                        final FormulaTrait formulaTrait = new FormulaTrait(lag, rate, minOD, maxOD);
+                        formulaTraitResultList.add(formulaTrait);
+                    }
+                }
+            }
+        }
 
-
-
-        return null;
+        return formulaTraitResultList;
     }
 }

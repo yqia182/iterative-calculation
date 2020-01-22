@@ -26,10 +26,6 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
     /** sample data series */
     private SampleData sampleData;
 
-
-
-
-
     /**
      * Based on the formula given, calculate once
      * It calculates only one set of sample data. xValueList to yValueList

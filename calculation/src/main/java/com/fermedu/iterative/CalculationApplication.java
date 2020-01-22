@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Include:
  **/
 @SpringBootApplication
-
 public class CalculationApplication {
 
     public static void main(String[] args) {

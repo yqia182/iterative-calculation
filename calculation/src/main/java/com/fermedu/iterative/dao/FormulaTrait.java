@@ -16,11 +16,21 @@ public class FormulaTrait implements Comparable<FormulaTrait>{
 
     private double rate; // maximum growth rate - μ max
 
-    private double maxOD; // maxOD
-
     private double minOD; // minOD
 
+    private double maxOD; // maxOD
+
     private double coefficient;
+
+    public FormulaTrait() {
+    }
+
+    public FormulaTrait(double lagTime, double rate, double minOD, double maxOD) {
+        this.lagTime = lagTime;
+        this.rate = rate;
+        this.minOD = minOD;
+        this.maxOD = maxOD;
+    }
 
     /**
      * step for ordering, based on the level of coefficient

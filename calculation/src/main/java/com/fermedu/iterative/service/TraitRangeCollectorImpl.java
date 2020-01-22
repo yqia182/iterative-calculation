@@ -1,11 +1,14 @@
 package com.fermedu.iterative.service;
 
 import com.fermedu.iterative.dao.FormulaTrait;
+import com.fermedu.iterative.persistence.MysqlConnector;
+import com.fermedu.iterative.properties.IterativeCalculationParamSuggestionProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -19,10 +22,18 @@ import java.util.List;
 @Slf4j
 public class TraitRangeCollectorImpl implements TraitRangeCollector {
 
+    // todo : this cannot hold values for any persistence purposes. fix
     private List<FormulaTrait> formulaTraitList;
 
     @Autowired
+    private MysqlConnector mysqlConnector;
+    
+    @Autowired
     private TraitRangeAdvisor traitRangeAdvisor;
+
+    /** initial param properties suggestions */
+    @Autowired
+    private IterativeCalculationParamSuggestionProperties suggestionProperties;
 
     /***
      * @Description 将this.formulaTraitList 传入traitRangeAdvisor，获取最优拟合的结果list
@@ -36,6 +47,54 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
         return formulaTraitListResult;
     }
 
+
+
+    
+    
+    /***
+    * @Description make this.formulaTraitList to have values
+     * 1st, check if this.formulaTraitList has any value
+     * 2nd, check if mysql has any value
+     * 3rd, initialize values by generating them according to the ranges you assigned
+     * result: there will be values ready to read from this.formulaTraitList
+    * @Params * @param 
+    * @Return void
+    **/
+    private void initTraitList() {
+        if (this.formulaTraitList == null || this.formulaTraitList.size() <= 0) {
+
+            List<FormulaTrait> mysqlList = mysqlConnector.findAll();
+            if (mysqlList != null && mysqlList.size() > 0) {
+                
+                this.formulaTraitList = mysqlList;
+            } else {
+
+
+                /** not yet initialized the this.formulaTraitList */
+                final FormulaTrait formulaTraitMin = new FormulaTrait(
+                        suggestionProperties.getLagRangeMin(),
+                        suggestionProperties.getRateRangeMin(),
+                        suggestionProperties.getMinODRangeMin(),
+                        suggestionProperties.getMaxODRangeMin());
+                final FormulaTrait formulaTraitMax = new FormulaTrait(
+                        suggestionProperties.getLagRangeMax(),
+                        suggestionProperties.getRateRangeMax(),
+                        suggestionProperties.getMinODRangeMax(),
+                        suggestionProperties.getMaxODRangeMax());
+
+                final List<FormulaTrait> initialFormulaTraitList = Arrays.asList(formulaTraitMin, formulaTraitMax);
+                final List<FormulaTrait> formulaTraitList = traitRangeAdvisor.generateFormulaListByGivenParamRange(initialFormulaTraitList);
+
+                this.formulaTraitList = formulaTraitList;
+                
+            } 
+        } else {
+            /** this.formulaTraitList already has initial values */
+            System.out.println("There has already been a this.formulaTraitList. Now the list size is: ".concat(String.valueOf(this.formulaTraitList.size())));
+        }
+
+    }
+
     /***
      * @Description 选择最优coefficient并且返回。清空this.formulaTraitList
      * select best coefficient list and return. set this.formulaTraitList to new ArrayList.
@@ -44,38 +103,30 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
      **/
     @Override
     public List<FormulaTrait> loadTraitList() {
-
+        /** make this.formulaTraitList to have values */
         this.initTraitList();
 
-        final List<FormulaTrait> formulaTraitListResult = this.selectHighCoefficient(this.formulaTraitList);
+        /** select best coefficient */
+        final List<FormulaTrait> selectedFormulaTraitListResult = this.selectHighCoefficient(this.formulaTraitList);
 
-        /** empty current this.formulaTraitList */
-        this.formulaTraitList = new ArrayList<>();
-        return formulaTraitListResult;
+        /** empty current formulaTraitList */
+        mysqlConnector.deleteAll();
+        mysqlConnector.saveAll(selectedFormulaTraitListResult);
+
+        return selectedFormulaTraitListResult;
     }
+
 
     /***
-    * @Description if this.formulaTraitListResult is not present,
-     * initialize the this.formulaTraitListResult for the first time
-     * and set the generated list to this.formulaTraitListResult
-    * @Params * @param 
-    * @Return void
+    * @Description save one formulaTrait to mysql
+    * @Params * @param formulaTrait
+    * @Return java.util.List<com.fermedu.iterative.dao.FormulaTrait>
     **/
-    private void initTraitList() {
-        if (this.formulaTraitList == null || this.formulaTraitList.size() <= 0) {
-            /** not yet initialized the this.formulaTraitList */
-
-        } else {
-
-        }
-
-    }
-
     @Override
     public List<FormulaTrait> saveToTraitList(FormulaTrait formulaTrait) {
-        this.formulaTraitList.add(formulaTrait);
+        mysqlConnector.saveOne(formulaTrait);
+        final List<FormulaTrait> formulaTraitList = mysqlConnector.findAll();
 
-
-        return this.formulaTraitList;
+        return formulaTraitList;
     }
 }

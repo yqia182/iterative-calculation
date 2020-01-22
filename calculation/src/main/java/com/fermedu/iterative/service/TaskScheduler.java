@@ -8,5 +8,5 @@ package com.fermedu.iterative.service;
  * @Include:
  **/
 public interface TaskScheduler {
-    void run();
+    void runAllSamples();
 }
