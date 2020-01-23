@@ -68,9 +68,11 @@ public class MysqlConnectorImpl implements MysqlConnector {
     }
 
     @Override
-    public void saveAll(List<FormulaTrait> formulaTraitList) {
+    public List<FormulaTrait> saveAll(List<FormulaTrait> formulaTraitList) {
         List<FormulaTraitEntity> entities = this.convertToEntityList(formulaTraitList);
-        formulaTraitRepository.save(entities);
+        List<FormulaTraitEntity> entityResultList= formulaTraitRepository.saveAll(entities);
+        List<FormulaTrait> resultList = this.convertFromEntityList(entityResultList);
+        return resultList;
     }
 
     @Override

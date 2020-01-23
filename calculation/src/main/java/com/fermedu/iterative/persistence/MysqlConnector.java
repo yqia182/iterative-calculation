@@ -17,7 +17,7 @@ public interface MysqlConnector {
 
     void deleteAll();
 
-    void saveAll(List<FormulaTrait> formulaTraitList);
+    List<FormulaTrait> saveAll(List<FormulaTrait> formulaTraitList);
 
     void saveOne(FormulaTrait formulaTrait);
 }

@@ -20,5 +20,5 @@ public interface FormulaTraitRepository extends JpaRepository<FormulaTraitEntity
 
     FormulaTraitEntity save(FormulaTraitEntity formulaTrait);
 
-    List<FormulaTraitEntity> save(List<FormulaTraitEntity> formulaTraitList);
+    <S extends FormulaTraitEntity> List<S> saveAll(Iterable<S> iterable);
 }
