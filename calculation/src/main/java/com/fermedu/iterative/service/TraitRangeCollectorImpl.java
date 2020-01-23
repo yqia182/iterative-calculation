@@ -22,7 +22,6 @@ import java.util.List;
 @Slf4j
 public class TraitRangeCollectorImpl implements TraitRangeCollector {
 
-    // todo : this cannot hold values for any persistence purposes. fix
     private List<FormulaTrait> formulaTraitList;
 
     @Autowired
@@ -46,10 +45,6 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
         formulaTraitListResult = traitRangeAdvisor.selectBestCoefficient(formulaTraitList);
         return formulaTraitListResult;
     }
-
-
-
-    
     
     /***
     * @Description make this.formulaTraitList to have values
@@ -65,11 +60,9 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
 
             List<FormulaTrait> mysqlList = mysqlConnector.findAll();
             if (mysqlList != null && mysqlList.size() > 0) {
-                
                 this.formulaTraitList = mysqlList;
+                System.out.println("STATUS: successfully loaded formula trait params from MySql(hard drive). MySql has given ".concat(String.valueOf(mysqlList.size())).concat(" records."));
             } else {
-
-
                 /** not yet initialized the this.formulaTraitList */
                 final FormulaTrait formulaTraitMin = new FormulaTrait(
                         suggestionProperties.getLagRangeMin(),
@@ -86,11 +79,12 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
                 final List<FormulaTrait> formulaTraitList = traitRangeAdvisor.generateFormulaListByGivenParamRange(initialFormulaTraitList);
 
                 this.formulaTraitList = formulaTraitList;
-                
+                System.out.println("STATUS: No formula trait(param) is found in the memory or MySql(hard drive). Now have successfully generated ".concat(String.valueOf(formulaTraitList.size())).concat(" records.").concat("The records have been deposited into memory"));
+
             } 
         } else {
             /** this.formulaTraitList already has initial values */
-            System.out.println("There has already been a this.formulaTraitList. Now the list size is: ".concat(String.valueOf(this.formulaTraitList.size())));
+            System.out.println("STATUS: reading formulaTraitList from memory. Now the list size is: ".concat(String.valueOf(this.formulaTraitList.size())));
         }
 
     }
@@ -110,8 +104,8 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
         final List<FormulaTrait> selectedFormulaTraitListResult = this.selectHighCoefficient(this.formulaTraitList);
 
         /** empty current formulaTraitList */
-        mysqlConnector.deleteAll();
-        mysqlConnector.saveAll(selectedFormulaTraitListResult);
+        mysqlConnector.deleteAndSaveAll(selectedFormulaTraitListResult);
+        System.out.println("STATUS: MySql flushed. The formulas with higher coefficients. ".concat(String.valueOf(selectedFormulaTraitListResult.size())).concat(" have been saved into memory and MySql(hard drive)."));
 
         return selectedFormulaTraitListResult;
     }

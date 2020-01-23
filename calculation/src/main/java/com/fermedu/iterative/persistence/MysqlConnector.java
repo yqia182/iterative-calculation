@@ -1,6 +1,7 @@
 package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.FormulaTrait;
+import com.fermedu.iterative.dao.SampleData;
 
 import java.util.List;
 
@@ -15,9 +16,10 @@ public interface MysqlConnector {
 
     List<FormulaTrait> findAll();
 
-    void deleteAll();
-
-    List<FormulaTrait> saveAll(List<FormulaTrait> formulaTraitList);
+    List<FormulaTrait> deleteAndSaveAll(List<FormulaTrait> formulaTraitList);
 
     void saveOne(FormulaTrait formulaTrait);
+
+    void saveResultForOneSample(SampleData sampleData, FormulaTrait formulaTrait);
+
 }

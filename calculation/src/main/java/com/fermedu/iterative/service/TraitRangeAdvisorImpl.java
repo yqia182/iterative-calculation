@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,9 +53,19 @@ public class TraitRangeAdvisorImpl implements TraitRangeAdvisor {
     **/
     @Override
     public List<FormulaTrait> selectBestCoefficient(List<FormulaTrait> formulaTraitList) {
+        final double maxCoefficient = formulaTraitList.stream().max(Comparator.comparingDouble(FormulaTrait::getCoefficient)).orElse(new FormulaTrait()).getCoefficient();
+        if (maxCoefficient < 0.001) {
+            /** current max coefficient is zero, now it is initialization stage. */
+            System.out.println("STATUS: Current max coefficient is zero. Now it is initialization stage. The coefficient list is not being selected for top coefficients.");
+            return formulaTraitList;
+        }
+
         final List<FormulaTrait> initialFormulaTraitList = formulaTraitList;
         final List<FormulaTrait> formulaTraitListReversed = this.reverseCoefficientOrder(initialFormulaTraitList);
         final List<FormulaTrait> formulaTraitListSelected = this.selectPercentile(formulaTraitListReversed);
+
+        System.out.println("STATUS: The formulas have been selected for higher coefficients. ");
+
         return formulaTraitListSelected;
     }
 

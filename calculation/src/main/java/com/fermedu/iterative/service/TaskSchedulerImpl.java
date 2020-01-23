@@ -50,7 +50,18 @@ public class TaskSchedulerImpl implements TaskScheduler {
     }
 
 
+    /**
+     * save the results of one sample to mysql database
+     * return nothing
+     */
 
+    private void saveResultForOneSample(SampleData sampleData, List<FormulaTrait> formulaTraitList) {
+        // todo:
+        /** find best coefficient of the list */
+
+        /** save to mysqlConnector */
+
+    }
 
 
     /***
@@ -61,9 +72,13 @@ public class TaskSchedulerImpl implements TaskScheduler {
     * @Params * @param sampleData
     * @Return void
     **/
-    private void runOneSample(SampleData sampleData) {
+    @Override
+    public void runOneSample(SampleData sampleData) {
         /** loop for the given times */
         for (int calLoop = 0; calLoop <= 1000; calLoop++) {
+            System.out.println("STATUS: Now running sample: ".concat(sampleData.getYName()).concat(" (Name on data sheet column)"));
+            System.out.println("STATUS: Now the ".concat(String.valueOf(calLoop)).concat(" loop is on."));
+
             /** load a formula list, which has been optimized */
             List<FormulaTrait> formulaTraitList = this.formulaTraitLoader();
 
@@ -75,12 +90,14 @@ public class TaskSchedulerImpl implements TaskScheduler {
                 /** save the list to somewhere */
                 traitRangeCollector.saveToTraitList(eachCoefficientResult);
             }
+
+
         }
+
+        /** after the loop ,record the result list to database */
+        this.saveResultForOneSample(sampleData, this.formulaTraitLoader());
     }
 
-    private void formulaTraitWithCoefficientSaver(List<FormulaTrait> coefficientHolder) {
-
-    }
 
     /***
      * @Description loop all samples

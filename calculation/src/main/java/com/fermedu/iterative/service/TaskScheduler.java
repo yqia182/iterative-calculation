@@ -1,5 +1,7 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.dao.SampleData;
+
 /**
  * @Program: iterative-calculation
  * @Create: 2020-01-20 18:16
@@ -8,5 +10,7 @@ package com.fermedu.iterative.service;
  * @Include:
  **/
 public interface TaskScheduler {
+    void runOneSample(SampleData sampleData);
+
     void runAllSamples();
 }

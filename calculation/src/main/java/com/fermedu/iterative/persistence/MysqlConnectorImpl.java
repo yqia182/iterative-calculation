@@ -1,8 +1,11 @@
 package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.FormulaTrait;
+import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.entity.FormulaTraitEntity;
+import com.fermedu.iterative.entity.TraitResultEntity;
 import com.fermedu.iterative.jpa.FormulaTraitRepository;
+import com.fermedu.iterative.jpa.TraitResultRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,9 @@ public class MysqlConnectorImpl implements MysqlConnector {
 
     @Autowired
     private FormulaTraitRepository formulaTraitRepository;
+
+    @Autowired
+    private TraitResultRepository resultRepository;
 
     private FormulaTrait convertFromEntity(FormulaTraitEntity entity) {
         FormulaTrait formulaTrait = new FormulaTrait();
@@ -63,12 +69,9 @@ public class MysqlConnectorImpl implements MysqlConnector {
     }
 
     @Override
-    public void deleteAll() {
+    public List<FormulaTrait> deleteAndSaveAll(List<FormulaTrait> formulaTraitList) {
         formulaTraitRepository.deleteAll();
-    }
 
-    @Override
-    public List<FormulaTrait> saveAll(List<FormulaTrait> formulaTraitList) {
         List<FormulaTraitEntity> entities = this.convertToEntityList(formulaTraitList);
         List<FormulaTraitEntity> entityResultList= formulaTraitRepository.saveAll(entities);
         List<FormulaTrait> resultList = this.convertFromEntityList(entityResultList);
@@ -79,5 +82,13 @@ public class MysqlConnectorImpl implements MysqlConnector {
     public void saveOne(FormulaTrait formulaTrait) {
         FormulaTraitEntity entity = this.convertToEntity(formulaTrait);
         formulaTraitRepository.save(entity);
+    }
+
+    @Override
+    public void saveResultForOneSample(SampleData sampleData, FormulaTrait formulaTrait) {
+        TraitResultEntity traitResultEntity = new TraitResultEntity();
+        BeanUtils.copyProperties(sampleData, traitResultEntity);
+        BeanUtils.copyProperties(formulaTrait, traitResultEntity);
+        final TraitResultEntity resultEntity = resultRepository.save(traitResultEntity);
     }
 }

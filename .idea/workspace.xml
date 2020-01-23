@@ -2,12 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bbb716b-3691-4b4e-bf3f-7d5f5a404b03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/jpa/FormulaTraitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/jpa/FormulaTraitRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/TraitResultEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/jpa/TraitResultRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultHolderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/CalculationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/CalculationApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/jpa/FormulaTraitRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/jpa/FormulaTraitRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/persistence/MysqlConnectorImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/persistence/MysqlConnectorImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TaskSchedulerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TaskSchedulerImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/CalculationApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/CalculationApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/persistence/MysqlConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/persistence/MysqlConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/persistence/MysqlConnectorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/persistence/MysqlConnectorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/service/TaskSchedulerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/service/TaskSchedulerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/service/TraitRangeCollectorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/classes/com/fermedu/iterative/service/TraitRangeCollectorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculation/target/test-classes/com/fermedu/iterative/persistence/MysqlConnectorImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/calculation/target/test-classes/com/fermedu/iterative/persistence/MysqlConnectorImplTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/calculation/target/" />
@@ -27,24 +43,14 @@
     <favorites_list name="iterative-calculation" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/persistence/MysqlConnectorImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -58,6 +64,10 @@
       <find>this.formulaTraitList</find>
       <find>drive</find>
       <find>saveall</find>
+      <find>connector.saveall</find>
+      <find>this.formulaTr</find>
+      <find>max</find>
+      <find>dtype</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -74,7 +84,6 @@
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/MathUtil/RegressionMathTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/dao/FormulaTraitTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/properties/IterativeCalculationPropertiesTest.java" />
@@ -82,26 +91,32 @@
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/ParamRangeDivisionMath.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculationImpl.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" />
-        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TaskSchedulerImplTest.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TraitRangeAdvisorImplTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/properties/IterativeCalculationParamSuggestionPropertiesTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/properties/IterativeCalculationParamSuggestionProperties.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/Mysql.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/FormulaTrait.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/CalculationApplication.java" />
         <option value="$PROJECT_DIR$/calculation/pom.xml" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/FormulaTraitEntity.java" />
-        <option value="$PROJECT_DIR$/calculation/src/main/resources/application-dev.properties" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/jpa/FormulaTraitRepositoryTest.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/jpa/FormulaTraitRepository.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnector.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultSavingService.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultHolder.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultHolderImpl.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/jpa/TraitResultRepository.java" />
         <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java" />
         <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/persistence/MysqlConnectorImplTest.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/TraitResultEntity.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/CalculationApplication.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java" />
+        <option value="$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TaskSchedulerImplTest.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java" />
+        <option value="$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java" />
       </list>
     </option>
   </component>
@@ -142,7 +157,7 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="528" />
     <option name="y" value="-12" />
     <option name="width" value="981" />
@@ -157,52 +172,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
-          <expand>
-            <path>
-              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com.fermedu.iterative" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com.fermedu.iterative" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,7 +242,83 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="iterative" type="462c0819:PsiDirectoryNode" />
+              <item name="MathUtil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iterative-calculation" type="462c0819:PsiDirectoryNode" />
+              <item name="calculation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="iterative" type="462c0819:PsiDirectoryNode" />
               <item name="persistence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iterative-calculation" type="462c0819:PsiDirectoryNode" />
+              <item name="calculation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="iterative" type="462c0819:PsiDirectoryNode" />
+              <item name="properties" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iterative-calculation" type="462c0819:PsiDirectoryNode" />
+              <item name="calculation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="iterative" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com.fermedu.iterative" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="iterative-calculation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iterative-calculation (1)" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com.fermedu.iterative" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -293,6 +338,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -306,6 +352,7 @@
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.fermedu.iterative.persistence" />
       <recent name="com.fermedu.iterative.service" />
     </key>
   </component>
@@ -321,23 +368,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MysqlConnectorImplTest.deleteAll">
-    <configuration name="FormulaTraitRepositoryTest.saveAllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="iterative-calculation (1)" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fermedu.iterative.jpa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fermedu.iterative.jpa" />
-      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.jpa.FormulaTraitRepositoryTest" />
-      <option name="METHOD_NAME" value="saveAllTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TaskSchedulerImplTest.runOneSample">
     <configuration name="MysqlConnectorImplTest.deleteAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="iterative-calculation (1)" />
       <extension name="coverage">
@@ -386,7 +417,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MysqlConnectorImplTest.saveOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MysqlConnectorImplTest.saveResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="iterative-calculation (1)" />
       <extension name="coverage">
         <pattern>
@@ -396,7 +427,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.fermedu.iterative.persistence" />
       <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.persistence.MysqlConnectorImplTest" />
-      <option name="METHOD_NAME" value="saveOne" />
+      <option name="METHOD_NAME" value="saveResultTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskSchedulerImplTest.runOneSample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iterative-calculation (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fermedu.iterative.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fermedu.iterative.service" />
+      <option name="MAIN_CLASS_NAME" value="com.fermedu.iterative.service.TaskSchedulerImplTest" />
+      <option name="METHOD_NAME" value="runOneSample" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -404,11 +451,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TaskSchedulerImplTest.runOneSample" />
+        <item itemvalue="JUnit.MysqlConnectorImplTest.saveResultTest" />
         <item itemvalue="JUnit.MysqlConnectorImplTest.deleteAll" />
         <item itemvalue="JUnit.MysqlConnectorImplTest.findAll" />
         <item itemvalue="JUnit.MysqlConnectorImplTest.saveAll" />
-        <item itemvalue="JUnit.FormulaTraitRepositoryTest.saveAllTest" />
-        <item itemvalue="JUnit.MysqlConnectorImplTest.saveOne" />
       </list>
     </recent_temporary>
   </component>
@@ -431,22 +478,11 @@
       <workItem from="1579654809526" duration="5000" />
       <workItem from="1579655008949" duration="18863000" />
       <workItem from="1579740287707" duration="2685000" />
+      <workItem from="1579743077061" duration="13038000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MysqlConnectorImplTest_saveOne - 2020.01.23 at 14h 08m 39s.xml">
-      <configuration name="MysqlConnectorImplTest.saveOne" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlConnectorImplTest_saveAll - 2020.01.23 at 14h 10m 25s.xml">
-      <configuration name="MysqlConnectorImplTest.saveAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlConnectorImplTest_saveAll - 2020.01.23 at 14h 11m 44s.xml">
-      <configuration name="MysqlConnectorImplTest.saveAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MysqlConnectorImplTest_saveAll - 2020.01.23 at 14h 12m 02s.xml">
-      <configuration name="MysqlConnectorImplTest.saveAll" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MysqlConnectorImplTest_saveAll - 2020.01.23 at 14h 17m 15s.xml">
       <configuration name="MysqlConnectorImplTest.saveAll" configurationId="JUnit" />
     </history-entry>
@@ -465,9 +501,21 @@
     <history-entry file="MysqlConnectorImplTest_deleteAll - 2020.01.23 at 14h 29m 15s.xml">
       <configuration name="MysqlConnectorImplTest.deleteAll" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MysqlConnectorImplTest_saveResultTest - 2020.01.23 at 16h 45m 12s.xml">
+      <configuration name="MysqlConnectorImplTest.saveResultTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MysqlConnectorImplTest_saveResultTest - 2020.01.23 at 16h 48m 55s.xml">
+      <configuration name="MysqlConnectorImplTest.saveResultTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskSchedulerImplTest_runOneSample - 2020.01.23 at 17h 45m 37s.xml">
+      <configuration name="TaskSchedulerImplTest.runOneSample" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskSchedulerImplTest_runOneSample - 2020.01.23 at 17h 49m 07s.xml">
+      <configuration name="TaskSchedulerImplTest.runOneSample" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58769000" />
+    <option name="totallyTimeSpent" value="71807000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,7 +527,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49408284" visible="true" weight="0.24979724" />
       <window_info id="Structure" order="1" sideWeight="0.50591713" side_tool="true" weight="0.24979724" />
@@ -491,7 +539,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41065294" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.77835053" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4329897" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -522,52 +570,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/CsvWorksheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/calculation.iml" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/summary/SumOfSquares.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/stat/descriptive/AbstractUnivariateStatistic.class" />
-    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/MathUtil/RegressionMathTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/formula/GrowthCurveCalculationImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingService.java" />
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/FormulaLoadingServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/VariableParam.java" />
@@ -603,55 +606,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/MethodStep.java" />
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/ParamInterface.java" />
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/SampleData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/DataSeries.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/SampleDataArranger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/formula/GrowthCurveCalculation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/IDE/Java/jdk1.8.0_202/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="776" column="13" lean-forward="true" selection-start-line="776" selection-start-column="13" selection-end-line="776" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -696,45 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/ParamRangeDivisionMath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1062">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TaskSchedulerImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding>
-            <element signature="e#638#639#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/SampleDataArrangerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-738">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/FormulaTrait.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -749,30 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="75" column="43" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/DataAccessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,34 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="66" column="60" lean-forward="true" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/CalculationApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calculation/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/FormulaTraitEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,28 +695,6 @@
           <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2255#2256#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -863,17 +716,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculation/src/main/resources/application-dev.properties">
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/DataSeries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="216">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultSavingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/SampleDataArrangerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/ParamRangeDivisionMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/MathUtil/RegressionMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/dao/SampleData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" selection-start-line="19" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/SampleDataArranger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/jpa/TraitResultRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/IDE/Java/jdk1.8.0_202/src.zip!/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="839" column="16" selection-start-line="839" selection-start-column="16" selection-end-line="839" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultHolderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-371">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/ResultHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3.jar!/javax/persistence/GeneratedValue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/TraitResultEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/persistence/MysqlConnectorImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        <state relative-caret-position="183">
+          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/entity/FormulaTraitEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/resources/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/CalculationApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnectorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/test/java/com/fermedu/iterative/service/TaskSchedulerImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/persistence/MysqlConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeAdvisor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollectorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TraitRangeCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskSchedulerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculation/src/main/java/com/fermedu/iterative/service/TaskScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
