@@ -14,5 +14,5 @@ import java.util.List;
  **/
 public interface ResultHolder {
 
-    void saveResultForOneSample(SampleData sampleData, List<FormulaTrait> formulaTraitList);
+    void saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList);
 }

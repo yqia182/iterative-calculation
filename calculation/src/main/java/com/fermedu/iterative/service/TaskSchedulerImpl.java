@@ -3,6 +3,7 @@ package com.fermedu.iterative.service;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.formula.GrowthCurveCalculation;
+import com.fermedu.iterative.persistence.ResultHolder;
 import com.fermedu.iterative.persistence.SampleDataArranger;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,8 @@ public class TaskSchedulerImpl implements TaskScheduler {
     @Autowired
     private GrowthCurveCalculation growthCurveCalculation;
 
-
+    @Autowired
+    private ResultHolder resultHolder;
 
     /**
      * load a formula trait list
@@ -54,13 +56,10 @@ public class TaskSchedulerImpl implements TaskScheduler {
      * save the results of one sample to mysql database
      * return nothing
      */
-
-    private void saveResultForOneSample(SampleData sampleData, List<FormulaTrait> formulaTraitList) {
-        // todo:
-        /** find best coefficient of the list */
+    private void saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
 
         /** save to mysqlConnector */
-
+        resultHolder.saveResultForOneSample(sampleData, loop, formulaTraitList);
     }
 
 
@@ -91,11 +90,12 @@ public class TaskSchedulerImpl implements TaskScheduler {
                 traitRangeCollector.saveToTraitList(eachCoefficientResult);
             }
 
+            /** after the loop ,record the result list to database */
+            this.saveResultForOneSample(sampleData, calLoop, this.formulaTraitLoader());
 
         }
 
-        /** after the loop ,record the result list to database */
-        this.saveResultForOneSample(sampleData, this.formulaTraitLoader());
+
     }
 
 

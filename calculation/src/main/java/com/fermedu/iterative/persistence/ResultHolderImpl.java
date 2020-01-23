@@ -35,7 +35,7 @@ public class ResultHolderImpl implements ResultHolder {
     * @Return void
     **/
     @Override
-    public void saveResultForOneSample(SampleData sampleData, List<FormulaTrait> formulaTraitList) {
+    public void saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
         FormulaTrait bestCoefficientResult = formulaTraitList.stream().max(Comparator.comparingDouble(FormulaTrait::getCoefficient)).orElse(new FormulaTrait());
         if (Math.abs(bestCoefficientResult.getCoefficient() - 0.0d) < 0.001d) {
             /** the best coefficient is very close to 0 */
@@ -46,6 +46,6 @@ public class ResultHolderImpl implements ResultHolder {
                     "current formulaTraitList is : ").concat(JsonUtil.toJson(formulaTraitList)));
         }
 
-        mysqlConnector.saveResultForOneSample(sampleData, bestCoefficientResult);
+        mysqlConnector.saveResultForOneSample(sampleData, loop, bestCoefficientResult);
     }
 }

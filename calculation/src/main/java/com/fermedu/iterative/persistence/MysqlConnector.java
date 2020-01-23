@@ -20,6 +20,6 @@ public interface MysqlConnector {
 
     void saveOne(FormulaTrait formulaTrait);
 
-    void saveResultForOneSample(SampleData sampleData, FormulaTrait formulaTrait);
+    void saveResultForOneSample(SampleData sampleData, int loop, FormulaTrait formulaTrait);
 
 }
