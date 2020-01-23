@@ -87,6 +87,7 @@ public class MysqlConnectorImpl implements MysqlConnector {
     @Override
     public void saveResultForOneSample(SampleData sampleData, int loop, FormulaTrait formulaTrait) {
         TraitResultEntity traitResultEntity = new TraitResultEntity();
+        traitResultEntity.setLoop(loop);
         BeanUtils.copyProperties(sampleData, traitResultEntity);
         BeanUtils.copyProperties(formulaTrait, traitResultEntity);
         final TraitResultEntity resultEntity = resultRepository.save(traitResultEntity);

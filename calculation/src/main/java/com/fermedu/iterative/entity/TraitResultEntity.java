@@ -29,6 +29,9 @@ public class TraitResultEntity {
      * which is the column name for the sample on the sample collection sheet
      */
     private String yName;
+    
+    /** loop of the iterative cal */
+    private int loop;
 
     private double lagTime; // lag time
 
