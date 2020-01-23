@@ -43,7 +43,7 @@ class MysqlConnectorImplTest {
         sampleData.setYName("1231");
         FormulaTrait formulaTrait = new FormulaTrait(100d, 0.01d, 0d, 1.5d);
 
-        mysqlConnector.saveResultForOneSample(sampleData, formulaTrait);
+        mysqlConnector.saveResultForOneSample(sampleData,0, formulaTrait);
 
     }
 }

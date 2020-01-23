@@ -2,6 +2,7 @@ package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
+import com.fermedu.iterative.properties.IterativeCalculationProperties;
 import com.fermedu.iterative.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class ResultHolderImpl implements ResultHolder {
     @Autowired
     private MysqlConnector mysqlConnector;
 
+
+    @Autowired
+    private IterativeCalculationProperties calculationProperties;
     /***
     * @Description receives a sampledata and the formulatraitlist,
      * which has the coefficients calculated after iterative loops.
@@ -35,7 +39,7 @@ public class ResultHolderImpl implements ResultHolder {
     * @Return void
     **/
     @Override
-    public void saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
+    public boolean saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
         FormulaTrait bestCoefficientResult = formulaTraitList.stream().max(Comparator.comparingDouble(FormulaTrait::getCoefficient)).orElse(new FormulaTrait());
         if (Math.abs(bestCoefficientResult.getCoefficient() - 0.0d) < 0.001d) {
             /** the best coefficient is very close to 0 */
@@ -47,5 +51,16 @@ public class ResultHolderImpl implements ResultHolder {
         }
 
         mysqlConnector.saveResultForOneSample(sampleData, loop, bestCoefficientResult);
+
+        return this.checkIfCoefSatisfied(bestCoefficientResult);
+    }
+
+    private boolean checkIfCoefSatisfied(FormulaTrait bestCoefficientResult) {
+        final double threshold = calculationProperties.getSatisfiedCoefThreshold();
+        if (bestCoefficientResult.getCoefficient() >= threshold) {
+            System.out.println("STATUS: current formula:".concat(JsonUtil.toJson(bestCoefficientResult).concat("\n has reach satisfication level. Preparing to finalize current run.")));
+            return true;
+        }
+        return false;
     }
 }

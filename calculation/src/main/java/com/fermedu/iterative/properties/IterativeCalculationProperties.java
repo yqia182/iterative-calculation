@@ -20,4 +20,6 @@ public class IterativeCalculationProperties {
 
     private double rangeDividerGranularity = 0.10d;
 
+    private double satisfiedCoefThreshold = 0.995d;
+
 }

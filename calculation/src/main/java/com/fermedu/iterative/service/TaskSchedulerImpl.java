@@ -56,10 +56,11 @@ public class TaskSchedulerImpl implements TaskScheduler {
      * save the results of one sample to mysql database
      * return nothing
      */
-    private void saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
+    private boolean saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
 
         /** save to mysqlConnector */
-        resultHolder.saveResultForOneSample(sampleData, loop, formulaTraitList);
+        final boolean ifCoefSatisfied = resultHolder.saveResultForOneSample(sampleData, loop, formulaTraitList);
+        return ifCoefSatisfied;
     }
 
 
@@ -91,7 +92,10 @@ public class TaskSchedulerImpl implements TaskScheduler {
             }
 
             /** after the loop ,record the result list to database */
-            this.saveResultForOneSample(sampleData, calLoop, this.formulaTraitLoader());
+            final boolean ifCoefSatisfied = this.saveResultForOneSample(sampleData, calLoop, this.formulaTraitLoader());
+            if (ifCoefSatisfied) {
+                break;
+            }
 
         }
 

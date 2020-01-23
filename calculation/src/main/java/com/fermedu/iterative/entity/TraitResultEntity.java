@@ -31,7 +31,7 @@ public class TraitResultEntity {
     private String yName;
     
     /** loop of the iterative cal */
-    private int loop;
+    private Integer calLoop;
 
     private double lagTime; // lag time
 

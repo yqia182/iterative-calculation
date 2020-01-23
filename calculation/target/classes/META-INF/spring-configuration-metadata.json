@@ -63,6 +63,12 @@
       "type": "java.lang.Double",
       "sourceType": "com.fermedu.iterative.properties.IterativeCalculationProperties",
       "defaultValue": 0.1
+    },
+    {
+      "name": "iterative.satisfied-coef-threshold",
+      "type": "java.lang.Double",
+      "sourceType": "com.fermedu.iterative.properties.IterativeCalculationProperties",
+      "defaultValue": 0.995
     }
   ],
   "hints": []
