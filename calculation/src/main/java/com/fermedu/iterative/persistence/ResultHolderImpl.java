@@ -27,27 +27,33 @@ public class ResultHolderImpl implements ResultHolder {
 
     @Autowired
     private IterativeCalculationProperties calculationProperties;
+
     /***
-    * @Description receives a sampledata and the formulatraitlist,
+     * @Description receives a sampledata and the formulatraitlist,
      * which has the coefficients calculated after iterative loops.
      * So the formulaTraitList here is seen to have the finally optimized
      * formulaTrait (with the best coefficient)
      *
      * Only needs to select the best out of the list and save.
-    * @Params * @param sampleData
-* @param formulaTraitList
-    * @Return void
-    **/
+     * @Params * @param sampleData
+     * @param
+     * @Return void
+     **/
     @Override
-    public boolean saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList) {
-        FormulaTrait bestCoefficientResult = formulaTraitList.stream().max(Comparator.comparingDouble(FormulaTrait::getCoefficient)).orElse(new FormulaTrait());
+    public boolean saveResultForOneSample(SampleData sampleData, int loop) {
+
+        final List<FormulaTrait> allFormulaTrait = mysqlConnector.findAll();
+
+
+        FormulaTrait bestCoefficientResult = allFormulaTrait.stream().max(Comparator.comparingDouble(FormulaTrait::getCoefficient)).orElse(new FormulaTrait());
+
         if (Math.abs(bestCoefficientResult.getCoefficient() - 0.0d) < 0.001d) {
             /** the best coefficient is very close to 0 */
             System.out.println("Warning ResultHolderImpl saveResultForOneSample might have failed finding the max coefficient,".concat(
-                    "current formulaTraitList is : ").concat(JsonUtil.toJson(formulaTraitList)));
+                    "current formulaTraitList is : ").concat(JsonUtil.toJson(allFormulaTrait)));
 
             log.error("Warning ResultHolderImpl saveResultForOneSample might have failed finding the max coefficient,".concat(
-                    "current formulaTraitList is : ").concat(JsonUtil.toJson(formulaTraitList)));
+                    "current formulaTraitList is : ").concat(JsonUtil.toJson(allFormulaTrait)));
         }
 
         mysqlConnector.saveResultForOneSample(sampleData, loop, bestCoefficientResult);

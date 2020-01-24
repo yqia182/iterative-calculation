@@ -1,9 +1,6 @@
 package com.fermedu.iterative.persistence;
 
-import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
-
-import java.util.List;
 
 /**
  * @Program: iterative-calculation
@@ -14,5 +11,5 @@ import java.util.List;
  **/
 public interface ResultHolder {
 
-    boolean saveResultForOneSample(SampleData sampleData, int loop, List<FormulaTrait> formulaTraitList);
+    boolean saveResultForOneSample(SampleData sampleData, int loop);
 }
