@@ -24,7 +24,6 @@ public class ResultHolderImpl implements ResultHolder {
     @Autowired
     private MysqlConnector mysqlConnector;
 
-
     @Autowired
     private IterativeCalculationProperties calculationProperties;
 

@@ -33,7 +33,11 @@ public class TraitRangeAdvisorStepLengthExpandImpl implements TraitRangeAdvisor 
     private double[] divideRangeFurtherToArray(double[] paramArray, double granularity, double extraStepLength) {
         // 找到最大值和最小值. find the max and min values
         final double maxInArray = StatUtils.max(paramArray) + extraStepLength;
-        final double minInArray = StatUtils.min(paramArray) - extraStepLength;
+        double minInArray = StatUtils.min(paramArray) - extraStepLength;
+        if (minInArray < 0d) {
+            /** the minimum cannot be negative  */
+            minInArray = 0d;
+        }
         final double extremeDiff = maxInArray - minInArray;
         final double stepLength = extremeDiff / (1/granularity);
         List<Double> resultList = new ArrayList<>();
