@@ -21,11 +21,21 @@ import java.util.List;
 @Service
 @Slf4j
 public class ResultHolderImpl implements ResultHolder {
+
     @Autowired
     private MysqlConnector mysqlConnector;
 
     @Autowired
     private IterativeCalculationProperties calculationProperties;
+
+    private boolean checkIfCoefSatisfied(FormulaTrait bestCoefficientResult) {
+        final double threshold = calculationProperties.getSatisfiedCoefThreshold();
+        if (bestCoefficientResult.getCoefficient() >= threshold) {
+            System.out.println("STATUS: current formula:".concat(JsonUtil.toJson(bestCoefficientResult).concat("\n has reach satisfication level. Preparing to finalize current run.")));
+            return true;
+        }
+        return false;
+    }
 
     /***
      * @Description receives a sampledata and the formulatraitlist,
@@ -60,12 +70,5 @@ public class ResultHolderImpl implements ResultHolder {
         return this.checkIfCoefSatisfied(bestCoefficientResult);
     }
 
-    private boolean checkIfCoefSatisfied(FormulaTrait bestCoefficientResult) {
-        final double threshold = calculationProperties.getSatisfiedCoefThreshold();
-        if (bestCoefficientResult.getCoefficient() >= threshold) {
-            System.out.println("STATUS: current formula:".concat(JsonUtil.toJson(bestCoefficientResult).concat("\n has reach satisfication level. Preparing to finalize current run.")));
-            return true;
-        }
-        return false;
-    }
+
 }
