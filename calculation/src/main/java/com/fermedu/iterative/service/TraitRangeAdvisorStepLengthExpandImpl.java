@@ -3,6 +3,7 @@ package com.fermedu.iterative.service;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.properties.IterativeCalculationParamSuggestionProperties;
 import com.fermedu.iterative.properties.IterativeCalculationProperties;
+import com.fermedu.iterative.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.math3.stat.StatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,20 +72,23 @@ public class TraitRangeAdvisorStepLengthExpandImpl implements TraitRangeAdvisor 
         // from the pool, based on the granularity, divide the pool into multiple aliquots
 
         final double[] lagArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getLagTime()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
-        final double lagStepLength = expandRangeBy * (paramSuggestionProperties.getLagRangeMax() - paramSuggestionProperties.getLagRangeMin());
+        final double lagExpandRange = expandRangeBy * (paramSuggestionProperties.getLagRangeMax() - paramSuggestionProperties.getLagRangeMin());
         final double[] rateArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getRate()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
-        final double rateStepLength = expandRangeBy * (paramSuggestionProperties.getRateRangeMax() - paramSuggestionProperties.getRateRangeMin());
+        final double rateExpandRange = expandRangeBy * (paramSuggestionProperties.getRateRangeMax() - paramSuggestionProperties.getRateRangeMin());
         final double[] minODArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getMinOD()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
-        final double minODStepLength = expandRangeBy * (paramSuggestionProperties.getMinODRangeMax() - paramSuggestionProperties.getMinODRangeMin());
+        final double minODExpandRange = expandRangeBy * (paramSuggestionProperties.getMinODRangeMax() - paramSuggestionProperties.getMinODRangeMin());
         final double[] maxODArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getMaxOD()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
-        final double maxODStepLength = expandRangeBy * (paramSuggestionProperties.getMaxODRangeMax() - paramSuggestionProperties.getMaxODRangeMin());
+        final double maxODExpandRange = expandRangeBy * (paramSuggestionProperties.getMaxODRangeMax() - paramSuggestionProperties.getMaxODRangeMin());
 
         /** will find the max and min in each array and divide by the range and granularity */
-        final double[] lagFurtherDividedArray = this.divideRangeFurtherToArray(lagArray,divisionGranularity,lagStepLength);
-        final double[] rateFurtherDividedArray = this.divideRangeFurtherToArray(rateArray,divisionGranularity,rateStepLength);
-        final double[] minODFurtherDividedArray = this.divideRangeFurtherToArray(minODArray,divisionGranularity,minODStepLength);
-        final double[] maxODFurtherDividedArray = this.divideRangeFurtherToArray(maxODArray, divisionGranularity, maxODStepLength);
-
+        final double[] lagFurtherDividedArray = this.divideRangeFurtherToArray(lagArray,divisionGranularity,lagExpandRange);
+        System.out.println("lagFurtherDividedArray".concat(JsonUtil.toJson(lagFurtherDividedArray)));
+        final double[] rateFurtherDividedArray = this.divideRangeFurtherToArray(rateArray,divisionGranularity,rateExpandRange);
+        System.out.println("rateFurtherDividedArray".concat(JsonUtil.toJson(rateFurtherDividedArray)));
+        final double[] minODFurtherDividedArray = this.divideRangeFurtherToArray(minODArray,divisionGranularity,minODExpandRange);
+        System.out.println("minODFurtherDividedArray".concat(JsonUtil.toJson(minODFurtherDividedArray)));
+        final double[] maxODFurtherDividedArray = this.divideRangeFurtherToArray(maxODArray, divisionGranularity, maxODExpandRange);
+        System.out.println("maxODFurtherDividedArray".concat(JsonUtil.toJson(maxODFurtherDividedArray)));
 
         // 把等分结果重新排列组合成 N^4 个结果，组成list返回
         // combine all aliquots from every parameters into a list

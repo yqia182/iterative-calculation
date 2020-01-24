@@ -16,10 +16,10 @@ public interface MysqlConnector {
 
     List<FormulaTrait> findAll();
 
-    List<FormulaTrait> deleteAndSaveAll(List<FormulaTrait> formulaTraitList);
 
     void saveOne(FormulaTrait formulaTrait);
 
     void saveResultForOneSample(SampleData sampleData, int loop, FormulaTrait formulaTrait);
 
+    void deleteAll();
 }

@@ -68,15 +68,6 @@ public class MysqlConnectorImpl implements MysqlConnector {
         return formulaTraitList;
     }
 
-    @Override
-    public List<FormulaTrait> deleteAndSaveAll(List<FormulaTrait> formulaTraitList) {
-        formulaTraitRepository.deleteAll();
-
-        List<FormulaTraitEntity> entities = this.convertToEntityList(formulaTraitList);
-        List<FormulaTraitEntity> entityResultList= formulaTraitRepository.saveAll(entities);
-        List<FormulaTrait> resultList = this.convertFromEntityList(entityResultList);
-        return resultList;
-    }
 
     @Override
     public void saveOne(FormulaTrait formulaTrait) {
@@ -93,5 +84,10 @@ public class MysqlConnectorImpl implements MysqlConnector {
         traitResultEntity.setCalLoop(loop);
 
         final TraitResultEntity resultEntity = resultRepository.save(traitResultEntity);
+    }
+
+    @Override
+    public void deleteAll() {
+        formulaTraitRepository.deleteAll();
     }
 }
