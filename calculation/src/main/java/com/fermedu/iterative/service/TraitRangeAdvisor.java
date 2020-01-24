@@ -14,8 +14,7 @@ import java.util.List;
  **/
 public interface TraitRangeAdvisor {
 
-    List<FormulaTrait> selectBestCoefficient(List<FormulaTrait> formulaTraitList);
 
-    List<FormulaTrait> generateFormulaListByGivenParamRange(List<FormulaTrait> formulaTraitList);
+    List<FormulaTrait> generateFormulaListByGivenParamRange(List<FormulaTrait> formulaTraitList, int loop);
 
 }

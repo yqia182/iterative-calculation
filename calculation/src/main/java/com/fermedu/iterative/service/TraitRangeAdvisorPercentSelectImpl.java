@@ -1,15 +1,13 @@
 package com.fermedu.iterative.service;
 
-import com.fermedu.iterative.MathUtil.ParamRangeDivisionMath;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.properties.IterativeCalculationProperties;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.math3.stat.StatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,51 +20,27 @@ import java.util.stream.Collectors;
  **/
 @Service
 @Slf4j
-public class TraitRangeAdvisorImpl implements TraitRangeAdvisor {
+public class TraitRangeAdvisorPercentSelectImpl implements TraitRangeAdvisor {
 
     @Autowired
     private IterativeCalculationProperties calculationProperties;
 
-    private List<FormulaTrait> reverseCoefficientOrder(List<FormulaTrait> formulaTraitList) {
+    private double[] divideRangeFurtherToArray(double[] paramArray, double granularity) {
+        // 找到最大值和最小值. find the max and min values
+        final double maxInArray = StatUtils.max(paramArray);
+        final double minInArray = StatUtils.min(paramArray);
+        final double extremeDiff = maxInArray - minInArray;
+        final double stepLength = extremeDiff / (1/granularity);
+        List<Double> resultList = new ArrayList<>();
 
-        Collections.sort(formulaTraitList);
-
-
-        return formulaTraitList;
-    }
-
-    private List<FormulaTrait> selectPercentile(List<FormulaTrait> formulaTraitListReversed) {
-        List<FormulaTrait> formulaTraitListResult = new ArrayList<>();
-        double percent = calculationProperties.getCoefficientSelectivePercentile();
-        for (int index = 0; index < formulaTraitListReversed.size() * percent; index++) {
-            formulaTraitListResult.add(formulaTraitListReversed.get(index));
+        for (int i = 0; i <= 1 / granularity; i++) {
+            double eachDouble = minInArray + stepLength * i;
+            resultList.add(eachDouble);
         }
 
-        return formulaTraitListResult;
-    }
+        final double[] resultArray = resultList.stream().mapToDouble(Double::doubleValue).toArray();
 
-    /***
-    * @Description select a percentile formula trait list according to the level of coefficient
-     * only the list with relatively highest coefficient will be picked out.
-    * @Params * @param formulaTraitList
-    * @Return java.util.List<com.fermedu.iterative.dao.FormulaTrait>
-    **/
-    @Override
-    public List<FormulaTrait> selectBestCoefficient(List<FormulaTrait> formulaTraitList) {
-        final double maxCoefficient = formulaTraitList.stream().max(Comparator.comparingDouble(FormulaTrait::getCoefficient)).orElse(new FormulaTrait()).getCoefficient();
-        if (maxCoefficient < 0.001) {
-            /** current max coefficient is zero, now it is initialization stage. */
-            System.out.println("STATUS: Current max coefficient is zero. Now it is initialization stage. The coefficient list is not being selected for top coefficients.");
-            return formulaTraitList;
-        }
-
-        final List<FormulaTrait> initialFormulaTraitList = formulaTraitList;
-        final List<FormulaTrait> formulaTraitListReversed = this.reverseCoefficientOrder(initialFormulaTraitList);
-        final List<FormulaTrait> formulaTraitListSelected = this.selectPercentile(formulaTraitListReversed);
-
-        System.out.println("STATUS: The formulas have been selected for higher coefficients. ");
-
-        return formulaTraitListSelected;
+        return resultArray;
     }
 
     /***
@@ -74,11 +48,13 @@ public class TraitRangeAdvisorImpl implements TraitRangeAdvisor {
      * this method will figure out the range of each parameter incl. lag, rate, etc,
      * and divide the range into xx aliquots (e.g. 100)
      * and return as a formula trait list.
+     *
+     * ends up with a problem. Once the param range is set to only one figure, the range is narrowed to zero.
      * @Params * @param formulaTraitList
      * @Return java.util.List<com.fermedu.iterative.dao.FormulaTrait>
      **/
     @Override
-    public List<FormulaTrait> generateFormulaListByGivenParamRange(List<FormulaTrait> selectedFormulaTraitList) {
+    public List<FormulaTrait> generateFormulaListByGivenParamRange(List<FormulaTrait> selectedFormulaTraitList, int loop) {
         /** how small each divided range will be
          * If granularity is 0.1d, each parameter,
          * e.g. lag will be divided into 1/0.1 +1 = 6 suggested new params */
@@ -93,10 +69,12 @@ public class TraitRangeAdvisorImpl implements TraitRangeAdvisor {
         final double[] minODArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getMinOD()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
         final double[] maxODArray = selectedFormulaTraitList.stream().map(formulaTrait -> formulaTrait.getMaxOD()).collect(Collectors.toList()).stream().mapToDouble(Double::doubleValue).toArray();
 
-        final double[] lagFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(lagArray,divisionGranularity);
-        final double[] rateFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(rateArray,divisionGranularity);
-        final double[] minODFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(minODArray,divisionGranularity);
-        final double[] maxODFurtherDividedArray = ParamRangeDivisionMath.divideRangeFurtherToArray(maxODArray, divisionGranularity);
+        /** will find the max and min in each array and divide by the range and granularity */
+        final double[] lagFurtherDividedArray = this.divideRangeFurtherToArray(lagArray,divisionGranularity);
+        final double[] rateFurtherDividedArray = this.divideRangeFurtherToArray(rateArray,divisionGranularity);
+        final double[] minODFurtherDividedArray = this.divideRangeFurtherToArray(minODArray,divisionGranularity);
+        final double[] maxODFurtherDividedArray = this.divideRangeFurtherToArray(maxODArray, divisionGranularity);
+
 
         // 把等分结果重新排列组合成 N^4 个结果，组成list返回
         // combine all aliquots from every parameters into a list

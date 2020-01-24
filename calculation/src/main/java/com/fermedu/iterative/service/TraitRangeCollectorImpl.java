@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,30 +21,24 @@ import java.util.List;
 @Slf4j
 public class TraitRangeCollectorImpl implements TraitRangeCollector {
 
+
     private List<FormulaTrait> formulaTraitList;
 
     @Autowired
     private MysqlConnector mysqlConnector;
     
     @Autowired
-    private TraitRangeAdvisor traitRangeAdvisor;
+    private TraitRangeAdvisorStepLengthExpandImpl traitRangeAdvisor;
 
     /** initial param properties suggestions */
     @Autowired
     private IterativeCalculationParamSuggestionProperties suggestionProperties;
 
-    /***
-     * @Description 将this.formulaTraitList 传入traitRangeAdvisor，获取最优拟合的结果list
-     * pass this.formulaTraitList  to traitRangeAdvisor in order to have a list of highest coefficient.
-     * @Params * @param
-     * @Return void
-     **/
-    private List<FormulaTrait> selectHighCoefficient(List<FormulaTrait> formulaTraitList) {
-        List<FormulaTrait> formulaTraitListResult = new ArrayList<>();
-        formulaTraitListResult = traitRangeAdvisor.selectBestCoefficient(formulaTraitList);
-        return formulaTraitListResult;
-    }
-    
+
+    @Autowired
+    private PercentileSelect percentileSelect;
+
+
     /***
     * @Description make this.formulaTraitList to have values
      * 1st, check if this.formulaTraitList has any value
@@ -55,7 +48,7 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
     * @Params * @param 
     * @Return void
     **/
-    private void initTraitList() {
+    private void initTraitList(int loop) {
         if (this.formulaTraitList == null || this.formulaTraitList.size() <= 0) {
 
             List<FormulaTrait> mysqlList = mysqlConnector.findAll();
@@ -76,7 +69,7 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
                         suggestionProperties.getMaxODRangeMax());
 
                 final List<FormulaTrait> initialFormulaTraitList = Arrays.asList(formulaTraitMin, formulaTraitMax);
-                final List<FormulaTrait> formulaTraitList = traitRangeAdvisor.generateFormulaListByGivenParamRange(initialFormulaTraitList);
+                final List<FormulaTrait> formulaTraitList = traitRangeAdvisor.generateFormulaListByGivenParamRange(initialFormulaTraitList, loop);
 
                 this.formulaTraitList = formulaTraitList;
                 System.out.println("STATUS: No formula trait(param) is found in the memory or MySql(hard drive). Now have successfully generated ".concat(String.valueOf(formulaTraitList.size())).concat(" records.").concat("The records have been deposited into memory"));
@@ -89,6 +82,12 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
 
     }
 
+
+
+
+
+
+
     /***
      * @Description 选择最优coefficient并且返回。清空this.formulaTraitList
      * select best coefficient list and return. set this.formulaTraitList to new ArrayList.
@@ -96,12 +95,12 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
      * @Return java.util.List<com.fermedu.iterative.dao.FormulaTrait>
      **/
     @Override
-    public List<FormulaTrait> loadTraitList() {
+    public List<FormulaTrait> loadTraitList(int loop) {
         /** make this.formulaTraitList to have values */
-        this.initTraitList();
+        this.initTraitList(loop);
 
         /** select best coefficient */
-        final List<FormulaTrait> selectedFormulaTraitListResult = this.selectHighCoefficient(this.formulaTraitList);
+        final List<FormulaTrait> selectedFormulaTraitListResult = percentileSelect.selectBestCoefficient(this.formulaTraitList);
 
         /** empty current formulaTraitList */
         mysqlConnector.deleteAndSaveAll(selectedFormulaTraitListResult);

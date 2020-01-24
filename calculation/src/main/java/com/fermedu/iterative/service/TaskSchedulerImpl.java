@@ -40,8 +40,8 @@ public class TaskSchedulerImpl implements TaskScheduler {
     /**
      * load a formula trait list
      */
-    private List<FormulaTrait> formulaTraitLoader() {
-        return traitRangeCollector.loadTraitList();
+    private List<FormulaTrait> formulaTraitLoader(int loop) {
+        return traitRangeCollector.loadTraitList(loop);
     }
 
     /**
@@ -80,7 +80,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
             System.out.println("STATUS: Now the ".concat(String.valueOf(calLoop)).concat(" loop is on."));
 
             /** load a formula list, which has been optimized */
-            List<FormulaTrait> formulaTraitList = this.formulaTraitLoader();
+            List<FormulaTrait> formulaTraitList = this.formulaTraitLoader(calLoop);
 
             for (FormulaTrait formulaTrait : formulaTraitList) {
 
@@ -92,7 +92,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
             }
 
             /** after the loop ,record the result list to database */
-            final boolean ifCoefSatisfied = this.saveResultForOneSample(sampleData, calLoop, this.formulaTraitLoader());
+            final boolean ifCoefSatisfied = this.saveResultForOneSample(sampleData, calLoop, this.formulaTraitLoader(calLoop));
             if (ifCoefSatisfied) {
                 break;
             }

@@ -12,7 +12,7 @@ import java.util.List;
  * @Include:
  **/
 public interface TraitRangeCollector {
-    List<FormulaTrait> loadTraitList();
+    List<FormulaTrait> loadTraitList(int loop);
 
     List<FormulaTrait> saveToTraitList(FormulaTrait formulaTrait);
 
