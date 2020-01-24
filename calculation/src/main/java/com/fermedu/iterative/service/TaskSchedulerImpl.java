@@ -3,6 +3,7 @@ package com.fermedu.iterative.service;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.formula.GrowthCurveCalculation;
+import com.fermedu.iterative.persistence.MysqlConnector;
 import com.fermedu.iterative.persistence.ResultHolder;
 import com.fermedu.iterative.persistence.SampleDataArranger;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +38,9 @@ public class TaskSchedulerImpl implements TaskScheduler {
     @Autowired
     private ResultHolder resultHolder;
 
+    @Autowired
+    private MysqlConnector mysqlConnector;
+
     /**
      * load a formula trait list
      */
@@ -64,6 +68,15 @@ public class TaskSchedulerImpl implements TaskScheduler {
     }
 
 
+    private void logFinalResultsAndDeleteTempResult(SampleData sampleData, int resultSize) {
+        mysqlConnector.logFinalResultsAndDeleteTempResult(sampleData, resultSize);
+
+        /** empty two forms for the next sample calculation */
+        mysqlConnector.deleteAllTempResult();
+        mysqlConnector.deleteAllTrait();
+
+    }
+
     /***
      * @Description runOneSample loop the given times. For each time,
      * there is a formula trait(which has lag, rate, maxOD and minOD).
@@ -76,7 +89,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
     public void runOneSample(SampleData sampleData) {
         FormulaTrait formulaTraitResult = new FormulaTrait();
         /** loop for the given times */
-        for (int calLoop = 0; calLoop <= 1000; calLoop++) {
+        for (int calLoop = 0; calLoop <= 200; calLoop++) {
             System.out.println("STATUS: sample code: ".concat(sampleData.getYName()).concat(" (as on data sheet)"));
             System.out.println("STATUS: Now the ".concat(String.valueOf(calLoop)).concat(" loop is on."));
 
@@ -100,8 +113,12 @@ public class TaskSchedulerImpl implements TaskScheduler {
 
         }
 
+        this.logFinalResultsAndDeleteTempResult(sampleData,10);
+
 
     }
+
+
 
 
     /***

@@ -2,8 +2,10 @@ package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
+import com.fermedu.iterative.entity.FinalResultPermanentEntity;
 import com.fermedu.iterative.entity.FormulaTraitEntity;
 import com.fermedu.iterative.entity.TraitResultEntity;
+import com.fermedu.iterative.jpa.FinalResultPermanentRepository;
 import com.fermedu.iterative.jpa.FormulaTraitRepository;
 import com.fermedu.iterative.jpa.TraitResultRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Program: iterative-calculation
@@ -30,6 +34,9 @@ public class MysqlConnectorImpl implements MysqlConnector {
 
     @Autowired
     private TraitResultRepository resultRepository;
+
+    @Autowired
+    private FinalResultPermanentRepository permanentRepository;
 
     private FormulaTrait convertFromEntity(FormulaTraitEntity entity) {
         FormulaTrait formulaTrait = new FormulaTrait();
@@ -87,7 +94,29 @@ public class MysqlConnectorImpl implements MysqlConnector {
     }
 
     @Override
-    public void deleteAll() {
+    public void deleteAllTrait() {
+
         formulaTraitRepository.deleteAll();
+    }
+
+    @Override
+    public void deleteAllTempResult() {
+        resultRepository.deleteAll();
+
+    }
+
+    @Override
+    public void logFinalResultsAndDeleteTempResult(SampleData sampleData, int resultSize) {
+
+        List<TraitResultEntity> resultEntities = resultRepository.findAll();
+        List<TraitResultEntity> sortedList = resultEntities.stream().sorted(Comparator.comparingDouble(TraitResultEntity::getCoefficient).reversed()).collect(Collectors.toList());
+
+        List<FinalResultPermanentEntity> permanentEntityList = new ArrayList<>();
+        for (int i = 0; i < resultSize; i++) {
+            FinalResultPermanentEntity eachFinalResult = new FinalResultPermanentEntity();
+            BeanUtils.copyProperties(sortedList.get(i), eachFinalResult);
+            permanentEntityList.add(eachFinalResult);
+        }
+        permanentRepository.saveAll(permanentEntityList);
     }
 }

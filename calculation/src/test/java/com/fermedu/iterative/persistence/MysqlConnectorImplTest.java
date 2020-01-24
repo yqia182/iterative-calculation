@@ -31,6 +31,12 @@ class MysqlConnectorImplTest {
     }
 
     @Test
+    void deleteAllTrait() {
+
+        mysqlConnector.deleteAllTrait();
+    }
+
+    @Test
     void saveOne() {
         FormulaTrait formulaTrait1 = new FormulaTrait(100, 0.01, 0, 1.6);
         mysqlConnector.saveOne(formulaTrait1);
@@ -45,5 +51,12 @@ class MysqlConnectorImplTest {
 
         mysqlConnector.saveResultForOneSample(sampleData,0, formulaTrait);
 
+    }
+
+    @Test
+    void logFinalResultsAndDeleteTempResult() {
+        SampleData sampleData = new SampleData();
+
+        mysqlConnector.logFinalResultsAndDeleteTempResult(sampleData,10);
     }
 }

@@ -21,5 +21,9 @@ public interface MysqlConnector {
 
     void saveResultForOneSample(SampleData sampleData, int loop, FormulaTrait formulaTrait);
 
-    void deleteAll();
+    void deleteAllTrait();
+
+    void deleteAllTempResult();
+
+    void logFinalResultsAndDeleteTempResult(SampleData sampleData, int resultSize);
 }

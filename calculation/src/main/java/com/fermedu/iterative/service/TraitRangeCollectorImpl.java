@@ -111,7 +111,7 @@ public class TraitRangeCollectorImpl implements TraitRangeCollector {
 
 
         /** empty current formulaTraitList */
-        mysqlConnector.deleteAll();
+        mysqlConnector.deleteAllTrait();
         System.out.println("STATUS: MySql flushed.");
 
         System.out.println("STATUS: ".concat(String.valueOf(this.formulaTraitList.size())).concat(" formulas have been loaded to memory for calculation."));

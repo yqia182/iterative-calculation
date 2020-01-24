@@ -27,7 +27,8 @@ class TaskSchedulerImplTest {
 
     @Test
     void runOneSample() {
-        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("1");
+//        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("1");
+        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("S288CA");
         taskScheduler.runOneSample(sampleData);
     }
 
