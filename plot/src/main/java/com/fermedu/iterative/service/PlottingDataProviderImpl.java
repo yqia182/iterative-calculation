@@ -1,21 +1,18 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.entity.FinalResultPermanentEntity;
+import com.fermedu.iterative.formula.GrowthCurveCalculation;
 import com.fermedu.iterative.jpa.FinalResultPermanentRepository;
-import com.fermedu.iterative.persistence.DataAccessor;
 import com.fermedu.iterative.persistence.MysqlConnector;
 import com.fermedu.iterative.persistence.SampleDataArranger;
-import com.fermedu.iterative.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import static org.springframework.data.domain.Sort.by;
 
 /**
  * @Program: iterative-calculation
@@ -36,9 +33,13 @@ public class PlottingDataProviderImpl implements PlottingDataProvider {
     @Autowired
     private FinalResultPermanentRepository finalResultRepository;
 
-    private void predictSampleDataByFormula() {
+    @Autowired
+    private GrowthCurveCalculation growthCurveCalculation;
 
-
+    /** calculate a set of predicted value by formula trait */
+    private SampleData predictSampleDataByFormula(FormulaTrait formulaTrait,SampleData sampleData) {
+        final SampleData predictedSampleData = growthCurveCalculation.predictFromSampleData(formulaTrait, sampleData);
+        return predictedSampleData;
     }
 
     @Override
@@ -49,34 +50,31 @@ public class PlottingDataProviderImpl implements PlottingDataProvider {
 
     @Override
     public SampleData getPredictedData(String sampleName) {
-        //todo
         /** get formula trait. select for the highest coef */
 
-        List<FinalResultPermanentEntity> entityList = finalResultRepository.findAllByYNameAndOrderByCoefficientDesc(sampleName);
-
+        List<FinalResultPermanentEntity> entityList = finalResultRepository.findByyNameOrderByCoefficientDesc(sampleName);
         FinalResultPermanentEntity bestCoefficientEntity = entityList.get(0);
-
-        System.out.println(JsonUtil.toJson(bestCoefficientEntity));
+        FormulaTrait formulaTrait = new FormulaTrait();
+        BeanUtils.copyProperties(bestCoefficientEntity, formulaTrait);
         /** get observed data, from the xSeries and the formula trait */
-
-
-        /** calculate the predicted ySeries */
+        final SampleData observedSampleData = this.getObservedData(sampleName);
 
         /** combine, save into a sampleData object */
+        final SampleData predictedSampleData = this.predictSampleDataByFormula(formulaTrait, observedSampleData);
 
-        this.predictSampleDataByFormula();
-        return null;
+        return predictedSampleData;
     }
-
 
 
     @Override
-    public List<String> getSampleNamesFromCsv() {
+    public List<String> getSampleNames() {
+        final List<String> csvSampleNames = csvData.readSampleNameList();
+        if (csvSampleNames != null && csvSampleNames.size() > 0) {
+            return csvSampleNames;
+        }
+
         return null;
     }
 
-    @Override
-    public List<String> getSampleNamesFromMysql() {
-        return null;
-    }
+
 }

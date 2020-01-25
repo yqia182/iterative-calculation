@@ -1,7 +1,6 @@
 package com.fermedu.iterative.service;
 
 import com.fermedu.iterative.dao.SampleData;
-import com.fermedu.iterative.entity.FinalResultPermanentEntity;
 
 import java.util.List;
 
@@ -17,7 +16,6 @@ public interface PlottingDataProvider {
 
     SampleData getPredictedData(String sampleName);
 
-    List<String> getSampleNamesFromCsv();
+    List<String> getSampleNames();
 
-    List<String> getSampleNamesFromMysql();
 }

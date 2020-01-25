@@ -41,7 +41,7 @@
         <iterative-util.version>0.0.1-SNAPSHOT</iterative-util.version>
         <regression.version>0.0.1-SNAPSHOT</regression.version>
         <iterative-configuration.version>0.0.1-SNAPSHOT</iterative-configuration.version>
-
+        <jfree-chart.version>1.5.0</jfree-chart.version>
     </properties>
 
     <dependencies>

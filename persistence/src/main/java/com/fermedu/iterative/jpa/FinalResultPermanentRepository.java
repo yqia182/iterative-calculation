@@ -1,8 +1,6 @@
 package com.fermedu.iterative.jpa;
 
 import com.fermedu.iterative.entity.FinalResultPermanentEntity;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -20,7 +18,7 @@ public interface FinalResultPermanentRepository extends JpaRepository<FinalResul
 
 
 
-    List<FinalResultPermanentEntity> findAllByYNameAndOrderByCoefficientDesc(String yName);
+    List<FinalResultPermanentEntity> findByyNameOrderByCoefficientDesc(String yName);
 }
 
 
