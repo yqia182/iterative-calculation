@@ -5,6 +5,7 @@ target/*
 
 ### IDEA ###
 .idea/
+.idea/*
 workspace.xml
 /target
 /out

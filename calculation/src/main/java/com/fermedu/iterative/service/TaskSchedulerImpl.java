@@ -99,7 +99,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
             for (FormulaTrait formulaTrait : formulaTraitList) {
 
                 /** calculate all coefficient, and save those to the list */
-                formulaTraitResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait, sampleData);                /** save the list to somewhere */
+                formulaTraitResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait, sampleData);
 
                 /** save the list to somewhere */
                 traitRangeCollector.saveToTraitList(formulaTraitResult);

@@ -3,7 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>iterative-calculation</artifactId>
+    <artifactId>calculation</artifactId>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>com.fermedu.iterative</groupId>
@@ -12,6 +13,30 @@
     </parent>
 
     <dependencies>
+        <dependency>
+            <groupId>com.fermedu.iterative</groupId>
+            <artifactId>regression</artifactId>
+            <version>${regression.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fermedu.iterative</groupId>
+            <artifactId>persistence</artifactId>
+            <version>${persistence.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fermedu.iterative</groupId>
+            <artifactId>iterative-util</artifactId>
+            <version>${iterative-util.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fermedu.iterative</groupId>
+            <artifactId>configuration</artifactId>
+            <version>${iterative-configuration.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.jscience</groupId>
             <artifactId>jscience</artifactId>
@@ -38,47 +63,11 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math3</artifactId>
-            <version>${common-math3.version}</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -86,16 +75,8 @@
             <version>${common-math.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.qamatic</groupId>
-            <artifactId>mintleaf</artifactId>
-            <version>${mintleaf-persistence.version}</version>
-        </dependency>
+
 
     </dependencies>
 

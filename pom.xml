@@ -10,6 +10,11 @@
     <description>iterative calculation and more</description>
     <modules>
         <module>calculation</module>
+        <module>persistence</module>
+        <module>plot</module>
+        <module>iterative-util</module>
+        <module>regression</module>
+        <module>configuration</module>
     </modules>
     <!--    多模块打包应该用pom方式而不是jar-->
     <packaging>pom</packaging>
@@ -31,7 +36,12 @@
         <common-math.version>2.2</common-math.version>
         <gson.version>2.8.6</gson.version>
         <csv.version>1.7</csv.version>
-        <mintleaf-persistence.version>1.8.27</mintleaf-persistence.version>
+        <persistence.version>0.0.1-SNAPSHOT</persistence.version>
+        <iterative-calculation.version>0.0.1-SNAPSHOT</iterative-calculation.version>
+        <iterative-util.version>0.0.1-SNAPSHOT</iterative-util.version>
+        <regression.version>0.0.1-SNAPSHOT</regression.version>
+        <iterative-configuration.version>0.0.1-SNAPSHOT</iterative-configuration.version>
+
     </properties>
 
     <dependencies>
@@ -46,6 +56,16 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
     </dependencies>
 
