@@ -1,10 +1,8 @@
 package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.CsvWorksheet;
-import com.fermedu.iterative.dao.DataSeries;
 import com.fermedu.iterative.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -21,17 +19,13 @@ import java.util.List;
  **/
 @Service
 @Slf4j
-public class DataAccessorCsvImpl<E extends Object> implements DataAccessor {
-
-    private final static String CSV_FILE_PATH = "D:\\Desktop\\1.csv";
+public class DataAccessorCsvImpl implements DataAccessor {
 
     private List<String> firstIDRow = new ArrayList<>();
 
     private List<List<Double>> valueRows = new ArrayList<>();
 
-    private DataSeries dataSeries;
-
-    private List<E> getRowAsList(int rowIndex, String rowString) {
+    private <E extends Object> List<E> getRowAsList(int rowIndex, String rowString) {
         if (rowIndex == 0) {
 
             /** first row, which contains sample ids */
@@ -52,9 +46,9 @@ public class DataAccessorCsvImpl<E extends Object> implements DataAccessor {
 
     }
 
-    private void readToLocalVariable() {
+    private <E extends Object> void readToLocalVariable(String csvFilePath) {
         try {
-            final File csvFile = new File(CSV_FILE_PATH);
+            final File csvFile = new File(csvFilePath);
 
             BufferedReader reader = new BufferedReader(new FileReader(csvFile));
 
@@ -69,28 +63,15 @@ public class DataAccessorCsvImpl<E extends Object> implements DataAccessor {
             reader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            log.error("File not found. Please check your file path. The file path that you have configured is : {}", CSV_FILE_PATH);
+            log.error("File not found. Please check your file path. The file path that you have configured is : {}", csvFilePath);
             log.error("e: {}", e.toString());
         } catch (IOException e) {
             e.printStackTrace();
-            log.error("File reading failed. Please check your file. The file path that you have configured is : {}", CSV_FILE_PATH);
+            log.error("File reading failed. Please check your file. The file path that you have configured is : {}", csvFilePath);
             log.error("e: {}", e.toString());
         }
     }
 
-
-    /***
-    * @Description constructor . initialize the data into rows
-    * @Params * @param
-    * @Return
-    **/
-    public DataAccessorCsvImpl() {
-        if (this.firstIDRow!=null && this.firstIDRow.size()>0 && this.valueRows != null && this.valueRows.size() > 0) {
-        } else {
-            log.info("Data arranged in rows is NOT found from the local memory. Now attempting to read csv file and initialize the data preparation.");
-            this.readToLocalVariable();
-        }
-    }
 
     /***
     * @Description readOneSeries
@@ -99,8 +80,8 @@ public class DataAccessorCsvImpl<E extends Object> implements DataAccessor {
     * @Return com.fermedu.iterative.persistence.DataSeries
     **/
     @Override
-    public CsvWorksheet readCvsWorksheet() {
-
+    public CsvWorksheet readCvsWorksheet(String csvFilePath) {
+        this.readToLocalVariable(csvFilePath);
         CsvWorksheet csvWorksheet = new CsvWorksheet();
         csvWorksheet.setFirstIDRow(this.firstIDRow);
         csvWorksheet.setValueRows(this.valueRows);

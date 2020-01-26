@@ -1,6 +1,7 @@
 package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.SampleData;
+import com.fermedu.iterative.properties.IterativePathProperties;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Program: iterative-calculation
@@ -28,9 +27,12 @@ class SampleDataArrangerImplTest {
     @Qualifier(value = "sampleDataArrangerImpl")
     private SampleDataArranger sampleDataArranger;
 
+    @Autowired
+    private IterativePathProperties pathProperties;
+
     @Test
     void readSampleNameList() {
-        List<String> resultList = sampleDataArranger.readSampleNameList();
+        List<String> resultList = sampleDataArranger.readSampleNameList("");
         System.out.println(resultList);
         System.out.println(resultList.size());
         Assert.assertEquals(80, resultList.size());
@@ -38,7 +40,7 @@ class SampleDataArrangerImplTest {
 
     @Test
     void readOneSampleDataSeriesByName() {
-        SampleData result = sampleDataArranger.readOneSampleDataSeriesByName("1");
+        SampleData result = sampleDataArranger.readOneSampleDataSeriesByName(pathProperties.getObservedDataCsvFilePath(),"1");
         System.out.println(result);
         Assert.assertEquals(result.getXValueList().size(), result.getYValueList().size());
 

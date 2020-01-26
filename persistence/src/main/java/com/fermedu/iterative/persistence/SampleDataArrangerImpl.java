@@ -27,10 +27,10 @@ public class SampleDataArrangerImpl implements SampleDataArranger {
     @Autowired
     private DataAccessor dataAccessor;
 
-    private void init() {
+    private void init(String csvFilePath) {
         if (this.csvWorksheet == null) {
             log.info("Initializing csv worksheet from CsvAccessor");
-            csvWorksheet = dataAccessor.readCvsWorksheet();
+            csvWorksheet = dataAccessor.readCvsWorksheet(csvFilePath);
         }
         if (this.sampleDataList == null || this.sampleDataList.size() <= 0) {
             this.initSampleDataList();
@@ -63,8 +63,8 @@ public class SampleDataArrangerImpl implements SampleDataArranger {
     }
 
     @Override
-    public List<String> readSampleNameList() {
-        this.init();
+    public List<String> readSampleNameList(String observedDataCsvFilePath) {
+        this.init(observedDataCsvFilePath);
         List<String> sampleNameList = new ArrayList<>();
         this.sampleDataList.forEach(each->sampleNameList.add(each.getYname()));
 
@@ -72,8 +72,8 @@ public class SampleDataArrangerImpl implements SampleDataArranger {
     }
 
     @Override
-    public SampleData readOneSampleDataSeriesByName(String yname) {
-        this.init();
+    public SampleData readOneSampleDataSeriesByName(String observedDataCsvFilePath, String yname) {
+        this.init(observedDataCsvFilePath);
         for (SampleData each : this.sampleDataList) {
             if (each.getYname().equals(yname)) {
                 return each;

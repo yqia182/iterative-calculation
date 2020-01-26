@@ -6,6 +6,7 @@ import com.fermedu.iterative.formula.GrowthCurveCalculation;
 import com.fermedu.iterative.persistence.MysqlConnector;
 import com.fermedu.iterative.persistence.ResultHolder;
 import com.fermedu.iterative.persistence.SampleDataArranger;
+import com.fermedu.iterative.properties.IterativePathProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,9 @@ public class TaskSchedulerImpl implements TaskScheduler {
     @Autowired
     private MysqlConnector mysqlConnector;
 
+    @Autowired
+    private IterativePathProperties pathProperties;
+
     /**
      * load a formula trait list
      */
@@ -52,7 +56,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
      * load all sample names
      */
     private List<String> sampleDataArranger() {
-        return sampleDataArranger.readSampleNameList();
+        return sampleDataArranger.readSampleNameList(pathProperties.getObservedDataCsvFilePath());
     }
 
 
@@ -131,7 +135,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
         /** loop for the number of the samples */
         List<String> sampleNames = this.sampleDataArranger();
         for (String sampleName : sampleNames) {
-            SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName(sampleName);
+            SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName(pathProperties.getObservedDataCsvFilePath(), sampleName);
             this.runOneSample(sampleData);
         }
     }

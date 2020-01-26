@@ -10,6 +10,6 @@ import com.fermedu.iterative.dao.CsvWorksheet;
  * @Include:
  **/
 public interface DataAccessor {
-    CsvWorksheet readCvsWorksheet();
+    CsvWorksheet readCvsWorksheet(String csvFilePath);
 
 }

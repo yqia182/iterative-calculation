@@ -12,11 +12,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <dependencies>
-        <dependency>
-            <groupId>com.fermedu.iterative</groupId>
-            <artifactId>iterative-util</artifactId>
-            <version>${iterative-util.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>com.fermedu.iterative</groupId>

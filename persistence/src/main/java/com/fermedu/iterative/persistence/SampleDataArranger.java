@@ -12,8 +12,8 @@ import java.util.List;
  * @Include:
  **/
 public interface SampleDataArranger {
-    List<String> readSampleNameList();
+    List<String> readSampleNameList(String observedDataCsvFilePath);
 
-    SampleData readOneSampleDataSeriesByName(String yname);
+    SampleData readOneSampleDataSeriesByName(String observedDataCsvFilePath, String yname);
 
 }

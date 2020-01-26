@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @Description: map the properties to this pojo object
  * @Include:
  **/
-@ConfigurationProperties(prefix = "iterative")
+@ConfigurationProperties(prefix = "iterative.param.calculation")
 @Component
 @Data
 public class IterativeCalculationProperties {
