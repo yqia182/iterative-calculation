@@ -28,7 +28,7 @@ public class FinalResultPermanentEntity {
      * sample name
      * which is the column name for the sample on the sample collection sheet
      */
-    private String yName;
+    private String yname;
     
     /** loop of the iterative cal */
     private Integer calLoop;

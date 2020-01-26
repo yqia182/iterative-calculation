@@ -37,6 +37,53 @@
         </dependency>
 
         <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>${jfree-common.version}</version>
+        </dependency>
+
+
+        <!--        svg stream out a chart-->
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-awt-util -->
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-awt-util</artifactId>
+            <version>${svg-batik.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-dom -->
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-dom</artifactId>
+            <version>${svg-batik.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-svg-dom -->
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-svg-dom</artifactId>
+            <version>${svg-batik.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-util -->
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-util</artifactId>
+            <version>${svg-batik.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-svggen -->
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-svggen</artifactId>
+            <version>${svg-batik.version}</version>
+        </dependency>
+
+
+
+
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>

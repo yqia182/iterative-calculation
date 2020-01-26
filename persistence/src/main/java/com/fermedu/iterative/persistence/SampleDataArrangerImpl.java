@@ -2,10 +2,8 @@ package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.CsvWorksheet;
 import com.fermedu.iterative.dao.SampleData;
-import com.fermedu.iterative.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,14 +39,14 @@ public class SampleDataArrangerImpl implements SampleDataArranger {
 
     private void initSampleDataList() {
 
-        final String xName = this.csvWorksheet.getFirstIDRow().get(0);
+        final String xname = this.csvWorksheet.getFirstIDRow().get(0);
         final List<Double> xValue = this.getOneValueColumnByIndex(0);
 
         for (int columnIndex=1; columnIndex < this.csvWorksheet.getFirstIDRow().size(); columnIndex++) {
             SampleData eachSampleData = new SampleData();
-            eachSampleData.setXName(xName);
+            eachSampleData.setXname(xname);
             eachSampleData.setXValueList(xValue);
-            eachSampleData.setYName(this.csvWorksheet.getFirstIDRow().get(columnIndex));
+            eachSampleData.setYname(this.csvWorksheet.getFirstIDRow().get(columnIndex));
             eachSampleData.setYValueList(this.getOneValueColumnByIndex(columnIndex));
 
             this.sampleDataList.add(eachSampleData);
@@ -68,16 +66,16 @@ public class SampleDataArrangerImpl implements SampleDataArranger {
     public List<String> readSampleNameList() {
         this.init();
         List<String> sampleNameList = new ArrayList<>();
-        this.sampleDataList.forEach(each->sampleNameList.add(each.getYName()));
+        this.sampleDataList.forEach(each->sampleNameList.add(each.getYname()));
 
         return sampleNameList;
     }
 
     @Override
-    public SampleData readOneSampleDataSeriesByName(String yName) {
+    public SampleData readOneSampleDataSeriesByName(String yname) {
         this.init();
         for (SampleData each : this.sampleDataList) {
-            if (each.getYName().equals(yName)) {
+            if (each.getYname().equals(yname)) {
                 return each;
             }
         }

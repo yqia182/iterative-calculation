@@ -90,7 +90,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
         FormulaTrait formulaTraitResult = new FormulaTrait();
         /** loop for the given times */
         for (int calLoop = 0; calLoop <= 200; calLoop++) {
-            System.out.println("STATUS: sample code: ".concat(sampleData.getYName()).concat(" (as on data sheet)"));
+            System.out.println("STATUS: sample code: ".concat(sampleData.getYname()).concat(" (as on data sheet)"));
             System.out.println("STATUS: Now the ".concat(String.valueOf(calLoop)).concat(" loop is on."));
 
             /** load a formula list, which has been optimized */

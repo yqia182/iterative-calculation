@@ -13,11 +13,11 @@ import java.util.List;
  **/
 @Data
 public class SampleData {
-    private String xName;
+    private String xname;
 
     private List<Double> xValueList;
 
-    private String yName;
+    private String yname;
 
     private List<Double> yValueList;
 }

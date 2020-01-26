@@ -2,15 +2,25 @@ package com.fermedu.iterative.service;
 
 import com.fermedu.iterative.dao.SampleData;
 import lombok.extern.slf4j.Slf4j;
-import org.jfree.chart.ChartFactory;
+import org.apache.batik.dom.GenericDOMImplementation;
+import org.apache.batik.svggen.SVGGraphics2D;
+import org.apache.batik.svggen.SVGGraphics2DIOException;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYDotRenderer;
+import org.jfree.chart.renderer.xy.XYItemRenderer;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
 
-import java.util.List;
+import java.awt.geom.Rectangle2D;
+import java.io.*;
 
 /**
  * @Program: iterative-calculation
@@ -23,47 +33,27 @@ import java.util.List;
 @Slf4j
 public class PlotterImpl implements Plotter {
 
+    private final static String CHART_TITLE_SUFFIX = " Sample - Growth Curve";
+
     @Autowired
     private PlottingDataProvider dataProvider;
 
-    private JFreeChart createLineChartFromDataset(XYSeriesCollection dataset,String title) {
-        final JFreeChart chart = ChartFactory.createXYLineChart(
-                title, // chart title
-                "time (min)", // x axis label
-                "OD", // y axis label
-                dataset,
-                PlotOrientation.VERTICAL,
-                false, // include legend
-                false, // tooltips
-                false // urls
-        );
+    /***
+     * @Description put the scatter (observed) and line (predicted) charts together to the same chart
+     * @Params * @param observed
+     * @param predicted
+     * @Return org.jfree.chart.JFreeChart
+     **/
+    private JFreeChart createCombinedChart(SampleData observed, SampleData predicted) {
 
-        return chart;
+        // Create a single plot containing both the scatter and line
+        XYPlot plot = new XYPlot();
 
-    }
-
-    private JFreeChart createScatterChartFromDataset(XYSeriesCollection dataset,String title) {
-        final JFreeChart chart = ChartFactory.createScatterPlot(
-                title, // chart title
-                "time (min)", // x axis label
-                "OD", // y axis label
-                dataset,
-                PlotOrientation.VERTICAL,
-                false, // include legend
-                false, // tooltips
-                false // urls
-        );
-
-        return chart;
-
-    }
-
-    private List<JFreeChart> createLineChart(SampleData observed, SampleData predicted) {
-
-        XYSeries observedSeries = new XYSeries(observed.getYName().concat(" observed"));
-        observedSeries.setDescription(observed.getYName().concat(" observed"));
-        XYSeries predictedSeries = new XYSeries(predicted.getYName().concat(" predicted"));
-        predictedSeries.setDescription(predicted.getYName().concat(" predicted"));
+        /** create two collections */
+        XYSeries observedSeries = new XYSeries(observed.getYname().concat(" observed"));
+        observedSeries.setDescription(observed.getYname().concat(" observed"));
+        XYSeries predictedSeries = new XYSeries(predicted.getYname().concat(" predicted"));
+        predictedSeries.setDescription(predicted.getYname().concat(" predicted"));
         for (int index = 0; index < observed.getXValueList().size(); index++) {
             double xObserved = observed.getXValueList().get(index).doubleValue();
             double xPredicted = predicted.getXValueList().get(index).doubleValue();
@@ -74,15 +64,68 @@ public class PlotterImpl implements Plotter {
             predictedSeries.add(xPredicted, yPredicted);
         }
 
+        /** scatter */
         XYSeriesCollection observedDataset = new XYSeriesCollection();
         observedDataset.addSeries(observedSeries);
+//        XYItemRenderer observedScatterRenderer = new XYLineAndShapeRenderer(false, true);    // Shapes only
+        XYItemRenderer observedScatterRenderer = new XYDotRenderer();    // Shapes only
+        ValueAxis scatterDomain = new NumberAxis("time(min)");
+        ValueAxis scatterRange = new NumberAxis("Optical Density");
+        // Set the scatter data, renderer, and axis into plot
+        plot.setDataset(0, observedDataset);
+        plot.setRenderer(0, observedScatterRenderer);
+        plot.setDomainAxis(0, scatterDomain);
+        plot.setRangeAxis(0, scatterRange);
+        // Map the scatter to the first Domain and first Range
+        plot.mapDatasetToDomainAxis(0, 0);
+        plot.mapDatasetToRangeAxis(0, 0);
 
-
+        /** line chart */
         XYSeriesCollection predictedDataset = new XYSeriesCollection();
         predictedDataset.addSeries(predictedSeries);
-        // todo
+        XYItemRenderer predictedLineRenderer = new XYLineAndShapeRenderer(true, false);    // Lines only
+        // Set the line data, renderer, and axis into plot
+        plot.setDataset(1, predictedDataset);
+        plot.setRenderer(1, predictedLineRenderer);
+        // Map the line to the second Domain and second Range
+        plot.mapDatasetToDomainAxis(1, 0);
+        plot.mapDatasetToRangeAxis(1, 0);
+        // Create the chart with the plot and a legend
+        JFreeChart chart = new JFreeChart(
+                observed.getYname().concat(CHART_TITLE_SUFFIX), JFreeChart.DEFAULT_TITLE_FONT, plot, true);
+        // Map the line to the FIRST Domain and second Range
 
         return chart;
+    }
+
+    private void streamOutSvg(JFreeChart chart,String sampleName) {
+        try {
+
+            DOMImplementation domImpl = GenericDOMImplementation
+                    .getDOMImplementation();
+            // Create an instance of org.w3c.dom.Document
+            Document document = domImpl.createDocument(null, "svg", null);
+            // Create an instance of the SVG Generator
+            SVGGraphics2D svgGenerator = new SVGGraphics2D(document);
+            // set the precision to avoid a null pointer exception in Batik 1.5
+            svgGenerator.getGeneratorContext().setPrecision(6);
+            // Ask the chart to render into the SVG Graphics2D implementation
+            chart.draw(svgGenerator, new Rectangle2D.Double(0, 0, 400, 300), null);
+            // Finally, stream out SVG to a file using UTF-8 character to
+            // byte encoding
+            boolean useCSS = true;
+            Writer out = null;
+            out = new OutputStreamWriter(new FileOutputStream(new File(
+                    sampleName.concat(".svg"))), "UTF-8");
+
+            svgGenerator.stream(out, useCSS);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (SVGGraphics2DIOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -90,8 +133,8 @@ public class PlotterImpl implements Plotter {
         final SampleData observed = dataProvider.getObservedData(sampleName);
         final SampleData predicted = dataProvider.getPredictedData(sampleName);
 
-//todo
-        JFreeChart chart
+        final JFreeChart chart = this.createCombinedChart(observed, predicted);
+        this.streamOutSvg(chart,sampleName);
 
     }
 }

@@ -14,6 +14,6 @@ import java.util.List;
 public interface SampleDataArranger {
     List<String> readSampleNameList();
 
-    SampleData readOneSampleDataSeriesByName(String yName);
+    SampleData readOneSampleDataSeriesByName(String yname);
 
 }

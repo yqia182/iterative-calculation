@@ -1,6 +1,12 @@
+### doc ###
 /doc/*
+*.svg
 
+### compile ###
 target/*
+
+
+### log ###
 *.log.*
 
 ### IDEA ###
