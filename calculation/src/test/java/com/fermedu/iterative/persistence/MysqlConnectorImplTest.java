@@ -2,6 +2,7 @@ package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
+import com.fermedu.iterative.entity.FinalResultPermanentEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,5 +59,11 @@ class MysqlConnectorImplTest {
         SampleData sampleData = new SampleData();
 
         mysqlConnector.logFinalResultsAndDeleteTempResult(sampleData,10);
+    }
+
+    @Test
+    void findAllFinalResultWithHighestCoef() {
+        List<FinalResultPermanentEntity> resultList = mysqlConnector.findAllFinalResultWithHighestCoef();
+        System.out.println(resultList);
     }
 }

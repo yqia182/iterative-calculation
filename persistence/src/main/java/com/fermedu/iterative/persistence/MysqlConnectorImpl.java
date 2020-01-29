@@ -13,9 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -118,5 +116,28 @@ public class MysqlConnectorImpl implements MysqlConnector {
             permanentEntityList.add(eachFinalResult);
         }
         permanentRepository.saveAll(permanentEntityList);
+    }
+
+    /***
+     * @Description find the highest coef for each sample . combine the values into a list
+     * @Params * @param 
+     * @Return java.util.List<com.fermedu.iterative.entity.FinalResultPermanentEntity>
+     **/
+    @Override
+    public List<FinalResultPermanentEntity> findAllFinalResultWithHighestCoef() {
+
+        List<FinalResultPermanentEntity> all = permanentRepository.findAllOrderByCoefficientDesc();
+
+        Map<String, FinalResultPermanentEntity> resultMap = new HashMap<>();
+        /** for each yname , get all items under this yname */
+        for (FinalResultPermanentEntity each : all) {
+            resultMap.put(each.getYname(), each);
+        }
+
+        List<FinalResultPermanentEntity> resultList = new ArrayList<>();
+
+        resultMap.forEach((key, value) -> resultList.add(value));
+
+        return resultList;
     }
 }

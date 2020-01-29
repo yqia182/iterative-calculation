@@ -17,6 +17,8 @@ public interface FinalResultPermanentRepository extends JpaRepository<FinalResul
     <S extends FinalResultPermanentEntity> List<S> saveAll(Iterable<S> iterable);
 
     List<FinalResultPermanentEntity> findByYnameOrderByCoefficientDesc(String yname);
+
+    List<FinalResultPermanentEntity> findAllOrderByCoefficientDesc();
 }
 
 

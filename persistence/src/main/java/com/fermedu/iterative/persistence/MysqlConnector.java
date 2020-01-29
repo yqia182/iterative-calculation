@@ -2,6 +2,7 @@ package com.fermedu.iterative.persistence;
 
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
+import com.fermedu.iterative.entity.FinalResultPermanentEntity;
 
 import java.util.List;
 
@@ -16,7 +17,6 @@ public interface MysqlConnector {
 
     List<FormulaTrait> findAll();
 
-
     void saveOne(FormulaTrait formulaTrait);
 
     void saveResultForOneSample(SampleData sampleData, int loop, FormulaTrait formulaTrait);
@@ -26,4 +26,6 @@ public interface MysqlConnector {
     void deleteAllTempResult();
 
     void logFinalResultsAndDeleteTempResult(SampleData sampleData, int resultSize);
+
+    List<FinalResultPermanentEntity> findAllFinalResultWithHighestCoef();
 }
