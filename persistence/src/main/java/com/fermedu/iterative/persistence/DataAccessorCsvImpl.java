@@ -87,4 +87,27 @@ public class DataAccessorCsvImpl implements DataAccessor {
         csvWorksheet.setValueRows(this.valueRows);
         return csvWorksheet;
     }
+
+    @Override
+    public void writeCvsWorksheet(String csvFilePath, List<String> lineList) {
+        try {
+            File csv = new File(csvFilePath);//CSV文件
+            BufferedWriter bw = new BufferedWriter(new FileWriter(csv, true));
+            //新增一行数据
+            for (String eachLine : lineList) {
+                bw.newLine();
+                bw.write(eachLine);
+            }
+            bw.close();
+        } catch (FileNotFoundException e) {
+            //捕获File对象生成时的异常
+            e.printStackTrace();
+        } catch (IOException e) {
+            //捕获BufferedWriter对象关闭时的异常
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

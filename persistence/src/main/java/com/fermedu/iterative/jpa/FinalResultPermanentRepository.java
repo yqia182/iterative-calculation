@@ -18,7 +18,7 @@ public interface FinalResultPermanentRepository extends JpaRepository<FinalResul
 
     List<FinalResultPermanentEntity> findByYnameOrderByCoefficientDesc(String yname);
 
-    List<FinalResultPermanentEntity> findAllOrderByCoefficientDesc();
+    List<FinalResultPermanentEntity> findByYnameNotNullOrderByCoefficientDesc();
 }
 
 

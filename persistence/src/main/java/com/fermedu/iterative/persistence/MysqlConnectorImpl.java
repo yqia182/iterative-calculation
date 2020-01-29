@@ -126,11 +126,12 @@ public class MysqlConnectorImpl implements MysqlConnector {
     @Override
     public List<FinalResultPermanentEntity> findAllFinalResultWithHighestCoef() {
 
-        List<FinalResultPermanentEntity> all = permanentRepository.findAllOrderByCoefficientDesc();
-
+        List<FinalResultPermanentEntity> all = permanentRepository.findByYnameNotNullOrderByCoefficientDesc();
+        Collections.reverse(all);
         Map<String, FinalResultPermanentEntity> resultMap = new HashMap<>();
         /** for each yname , get all items under this yname */
         for (FinalResultPermanentEntity each : all) {
+            /** each put will replace the corresponding key. so will need to reverse the orignial list */
             resultMap.put(each.getYname(), each);
         }
 
