@@ -7,6 +7,7 @@ import com.fermedu.iterative.formula.GrowthCurveCalculation;
 import com.fermedu.iterative.jpa.FinalResultPermanentRepository;
 import com.fermedu.iterative.persistence.MysqlConnector;
 import com.fermedu.iterative.persistence.SampleDataArranger;
+import com.fermedu.iterative.properties.IterativePathProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,9 @@ public class PlottingDataProviderImpl implements PlottingDataProvider {
     @Autowired
     private GrowthCurveCalculation growthCurveCalculation;
 
+    @Autowired
+    private IterativePathProperties pathProperties;
+
     /** calculate a set of predicted value by formula trait */
     private SampleData predictSampleDataByFormula(FormulaTrait formulaTrait,SampleData sampleData) {
         final SampleData predictedSampleData = growthCurveCalculation.predictFromSampleData(formulaTrait, sampleData);
@@ -44,7 +48,7 @@ public class PlottingDataProviderImpl implements PlottingDataProvider {
 
     @Override
     public SampleData getObservedData(String sampleName) {
-        SampleData sampleData = csvData.readOneSampleDataSeriesByName(sampleName);
+        SampleData sampleData = csvData.readOneSampleDataSeriesByName(pathProperties.getObservedDataCsvFilePath(), sampleName);
         return sampleData;
     }
 
@@ -68,7 +72,7 @@ public class PlottingDataProviderImpl implements PlottingDataProvider {
 
     @Override
     public List<String> getSampleNames() {
-        final List<String> csvSampleNames = csvData.readSampleNameList();
+        final List<String> csvSampleNames = csvData.readSampleNameList(pathProperties.getObservedDataCsvFilePath());
         if (csvSampleNames != null && csvSampleNames.size() > 0) {
             return csvSampleNames;
         }

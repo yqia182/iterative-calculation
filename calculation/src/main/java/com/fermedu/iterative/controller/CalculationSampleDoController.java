@@ -35,6 +35,7 @@ public class CalculationSampleDoController {
     @GetMapping(value = {"/all"})
     public void sampleAll() {
         taskScheduler.runAllSamples();
+
     }
 
     @GetMapping(value = {"/one"})
