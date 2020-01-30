@@ -70,4 +70,22 @@ class GrowthCurveCalculationImplTest {
         FormulaTrait formulaTraitResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait,sampleData);
         System.out.println(JsonUtil.toJson(formulaTraitResult));
     }
+
+    @Test
+    void calculateOncePerGompertzFormulaTest() {
+        GrowthCurveCalculationImpl growthCurveCalculation = new GrowthCurveCalculationImpl();
+        final double lag = 668.1152615;
+        final double rate = 0.005393962;
+        final double minOD = 0.029394609;
+        final double maxOD = 1.628621484;
+
+        final double time = lag * 2;
+
+
+        double yvalue = growthCurveCalculation.calculateOncePerGompertzFormula(lag, rate, maxOD, minOD, time);
+        System.out.println(yvalue);
+        double maxTimes = maxOD * 0.06599;
+        System.out.println(maxTimes);
+
+    }
 }

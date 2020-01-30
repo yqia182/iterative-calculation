@@ -62,12 +62,12 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
 
 
     /** calculate the dependant variable (prediction of OD observation value based on the model) */
-    private double calculateOncePerGompertzFormula(double lag, double mumax, double maxOD, double minOD, double time) {
+    public double calculateOncePerGompertzFormula(double lag, double mumax, double maxOD, double minOD, double time) {
         /** calculation begins */
         final double maxOD_minus_minOD = maxOD - minOD; // maxOD - minOD
-        final double maxOD_minus_minOD_times_log10_plus_1 = maxOD_minus_minOD * ln10 + 1; // ((maxOD - minOD)*log10)+1
+        final double maxOD_minus_minOD_times_ln10 = maxOD_minus_minOD * ln10; // ((maxOD - minOD)*log10)+1
         final double mumax_times_e1_times_lag_minus_time = mumax * Math.E * (lag - time); // μmax*e(1)*(lag-t)
-        final double exponential_result_1 = mumax_times_e1_times_lag_minus_time / maxOD_minus_minOD_times_log10_plus_1; // μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1
+        final double exponential_result_1 = mumax_times_e1_times_lag_minus_time / maxOD_minus_minOD_times_ln10 + 1d; // μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1
         final double negative_e_exponential = - Math.pow(Math.E, exponential_result_1); // -e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1)
         final double e_exponential = Math.pow(Math.E, negative_e_exponential); // e^(-e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1))
         final double result = minOD + maxOD_minus_minOD * e_exponential;// mindOD + (maxOD - minOD) * e^(-e^(μmax*e(1)*(lag-t)/((maxOD - minOD)*log10)+1))
