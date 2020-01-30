@@ -66,7 +66,24 @@ class GrowthCurveCalculationImplTest {
 //        formulaTrait.setMinOD(0.0d);
 //        formulaTrait.setRate(0.140945883387029);
 
-        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("","S288CA");
+        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("D:\\Desktop\\15degcurves.csv","S288CA");
+        FormulaTrait formulaTraitResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait,sampleData);
+        System.out.println(JsonUtil.toJson(formulaTraitResult));
+    }
+
+    @Test
+    void demoSampleS288CB() {
+//        "",     "1","RS",              "lag",            "mumax",         "eff"
+//        "S288CA",0,-0.0036577398336581,4.79754629364529,0.140945883387029,0.727719018232605
+
+        FormulaTrait formulaTrait = new FormulaTrait();
+        formulaTrait.setLagTime(4.504909874 * 24);
+        formulaTrait.setMaxOD(0.678d);
+        formulaTrait.setMinOD(0.0d);
+        formulaTrait.setRate(0.139264493/ 24);
+
+
+        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("D:\\Desktop\\15degcurves.csv","S288CB");
         FormulaTrait formulaTraitResult = growthCurveCalculation.calculateOneSampleSet(formulaTrait,sampleData);
         System.out.println(JsonUtil.toJson(formulaTraitResult));
     }
