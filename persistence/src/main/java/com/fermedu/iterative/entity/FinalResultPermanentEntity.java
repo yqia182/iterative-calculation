@@ -30,9 +30,6 @@ public class FinalResultPermanentEntity {
      */
     private String yname;
     
-    /** additional info. replicate name etc */
-    private String description;
-    
     /** loop of the iterative cal */
     private Integer calLoop;
 

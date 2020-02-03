@@ -32,13 +32,11 @@ class DataAccessorCsvImplTest {
     private List<String> contructCsvLinesFromList(List<FinalResultPermanentEntity> objectList) {
         List<String> resultList = new ArrayList<>();
 
-        final String firstLine = "description,yname,lag_time,max_rate,min_od,max_od,coef";
+        final String firstLine = "yname,lag_time,max_rate,min_od,max_od,coef";
         resultList.add(firstLine);
 
         for (FinalResultPermanentEntity each : objectList) {
             String eachString = new String();
-            eachString=eachString.concat(each.getDescription());
-            eachString=eachString.concat(",");
             eachString=eachString.concat(each.getYname());
             eachString=eachString.concat(",");
             eachString=eachString.concat(String.valueOf(each.getLagTime()));
