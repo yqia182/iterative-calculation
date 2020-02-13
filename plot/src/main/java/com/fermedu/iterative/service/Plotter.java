@@ -10,4 +10,5 @@ package com.fermedu.iterative.service;
 public interface Plotter {
 
     void plotBothObservedPredicted(String sampleName);
+
 }

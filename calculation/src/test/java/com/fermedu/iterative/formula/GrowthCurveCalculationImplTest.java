@@ -91,18 +91,16 @@ class GrowthCurveCalculationImplTest {
     @Test
     void calculateOncePerGompertzFormulaTest() {
         GrowthCurveCalculationImpl growthCurveCalculation = new GrowthCurveCalculationImpl();
-        final double lag = 668.1152615;
-        final double rate = 0.005393962;
-        final double minOD = 0.029394609;
-        final double maxOD = 1.628621484;
+        final double lag = 824.3577567036851;
+        final double rate = 0.0033333958336373886;
+        final double minOD = 0;
+        final double maxOD = 1.6184626463484388;
 
-        final double time = lag * 2;
+        final double time = 2250;
 
 
         double yvalue = growthCurveCalculation.calculateOncePerGompertzFormula(lag, rate, maxOD, minOD, time);
         System.out.println(yvalue);
-        double maxTimes = maxOD * 0.06599;
-        System.out.println(maxTimes);
 
     }
 }

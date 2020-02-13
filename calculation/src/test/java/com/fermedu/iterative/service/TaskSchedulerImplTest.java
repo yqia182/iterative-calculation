@@ -28,7 +28,7 @@ class TaskSchedulerImplTest {
     @Test
     void runOneSample() {
 //        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("1");
-        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("","S288CA");
+        SampleData sampleData = sampleDataArranger.readOneSampleDataSeriesByName("D:\\Desktop\\1.csv","53");
         taskScheduler.runOneSample(sampleData);
     }
 

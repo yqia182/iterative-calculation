@@ -113,6 +113,9 @@ public class MysqlConnectorImpl implements MysqlConnector {
         for (int i = 0; i < resultSize; i++) {
             FinalResultPermanentEntity eachFinalResult = new FinalResultPermanentEntity();
             BeanUtils.copyProperties(sortedList.get(i), eachFinalResult);
+            /** very important to set id back to null. otherwise the result might not be able to write in */
+            eachFinalResult.setId(null);
+            
             permanentEntityList.add(eachFinalResult);
         }
         permanentRepository.saveAll(permanentEntityList);

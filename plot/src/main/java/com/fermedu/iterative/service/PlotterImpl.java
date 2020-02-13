@@ -33,10 +33,14 @@ import java.io.*;
 @Slf4j
 public class PlotterImpl implements Plotter {
 
-    private final static String CHART_TITLE_SUFFIX = " Sample - Growth Curve";
+    private final static String CHART_TITLE_SUFFIX = " - Growth Curve";
 
     @Autowired
     private PlottingDataProvider dataProvider;
+
+
+
+
 
     /***
      * @Description put the scatter (observed) and line (predicted) charts together to the same chart
@@ -137,4 +141,8 @@ public class PlotterImpl implements Plotter {
         this.streamOutSvg(chart,sampleName);
 
     }
+
+
+
+
 }

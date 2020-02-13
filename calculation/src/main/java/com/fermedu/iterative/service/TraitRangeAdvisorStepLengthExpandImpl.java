@@ -30,20 +30,38 @@ public class TraitRangeAdvisorStepLengthExpandImpl implements TraitRangeAdvisor 
     @Autowired
     private IterativeCalculationParamSuggestionProperties paramSuggestionProperties;
 
+    /***
+    * @Description for
+    * @Params * @param paramArray
+* @param granularity
+* @param extraStepLength
+    * @Return double[]
+    **/
     private double[] divideRangeFurtherToArray(double[] paramArray, double granularity, double extraStepLength) {
         // 找到最大值和最小值. find the max and min values
         final double maxInArray = StatUtils.max(paramArray) + extraStepLength;
         double minInArray = StatUtils.min(paramArray) - extraStepLength;
-        if (minInArray < 0d) {
-            /** the minimum cannot be negative  */
-            minInArray = 0d;
-        }
-        final double extremeDiff = maxInArray - minInArray;
+        final double centreInArray = (maxInArray + minInArray)/2;
+
+
+
+//        if (minInArray < 0d) {
+//            /** the minimum cannot be negative  */
+//            minInArray = 0d;
+//        }
+
+        /** how wide the new range you would like? */
+        final double extremeDiff = (maxInArray - minInArray)*0.8;
+
+        double narrowerMax = centreInArray + (extremeDiff / 2);
+        double narrowerMin = centreInArray - (extremeDiff / 2);
+
         final double stepLength = extremeDiff / (1/granularity);
+
         List<Double> resultList = new ArrayList<>();
 
         for (int i = 0; i <= 1 / granularity; i++) {
-            double eachDouble = minInArray + stepLength * i;
+            double eachDouble = narrowerMin + stepLength * i;
             resultList.add(eachDouble);
         }
 

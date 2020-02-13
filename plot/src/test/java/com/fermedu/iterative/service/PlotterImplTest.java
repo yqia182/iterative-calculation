@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * @Program: iterative-calculation
  * @Create: 2020-01-26 17:03
@@ -24,7 +22,7 @@ class PlotterImplTest {
 
     @Test
     void plotBothObservedPredicted() {
-        String sampleName = new String("1");
+        String sampleName = new String("53");
         plotter.plotBothObservedPredicted(sampleName);
 
     }
