@@ -10,14 +10,14 @@ spring.datasource.password=123456
 #### Parameters
 Predict a range for each parameter in application-dev.properties. For example,
 
-> iterative.param.suggestion.lag-range-min = 400
-iterative.param.suggestion.lag-range-max = 1200
-iterative.param.suggestion.rate-range-min =0.00200
-iterative.param.suggestion.rate-range-max = 0.00800
-iterative.param.suggestion.minOD-range-min= 0.00
-iterative.param.suggestion.minOD-range-max= 0.080
-iterative.param.suggestion.maxOD-range-min=0.90
-iterative.param.suggestion.maxOD-range-max=1.70
+> iterative.param.suggestion.lag-range-min = 400  
+iterative.param.suggestion.lag-range-max = 1200  
+iterative.param.suggestion.rate-range-min =0.00200  
+iterative.param.suggestion.rate-range-max = 0.00800  
+iterative.param.suggestion.minOD-range-min= 0.00  
+iterative.param.suggestion.minOD-range-max= 0.080  
+iterative.param.suggestion.maxOD-range-min=0.90  
+iterative.param.suggestion.maxOD-range-max=1.70  
 
 This does not have to be precise. The ranges should be wide enough for the actual values falling into.
 #### Dataset File
