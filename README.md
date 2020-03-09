@@ -3,9 +3,9 @@
 ### Settings
 #### Database
 Install Mysql to your PC if you do not yet have a Mysql database. Configure the database name and credentials as, for example,
-> spring.datasource.url=jdbc:mysql://127.0.0.1:3306/iterative?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-spring.datasource.username=iterative
-spring.datasource.password=123456
+> spring.datasource.url=jdbc:mysql://127.0.0.1:3306/iterative?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true  
+spring.datasource.username=iterative  
+spring.datasource.password=123456  
 
 #### Parameters
 Predict a range for each parameter in application-dev.properties. For example,
