@@ -12,8 +12,14 @@
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-md-12 column">
-                    <button class="btn btn-primary btn-large" href="/calculation/do/sample/all">Run All Sample
-                    </button>
+                    <form role="form" method="get" action="/calculation/do/sample/all" target="_blank">
+<#--                        <div class="form-group">-->
+<#--                            <label>Sample Name</label>-->
+<#--                            <input name="sampleName" type="text" class="form-control"}"/>-->
+<#--                        </div>-->
+                        <button type="submit" class="btn btn-primary btn-large">Run All Sample
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-md-12 column">
-                    <form role="form" method="get" action="/calculation/do/sample/one">
+                    <form role="form" method="get" action="/calculation/do/sample/one" target="_blank">
                         <div class="form-group">
                             <label>Sample Name</label>
                             <input name="sampleName" type="text" class="form-control"}"/>
