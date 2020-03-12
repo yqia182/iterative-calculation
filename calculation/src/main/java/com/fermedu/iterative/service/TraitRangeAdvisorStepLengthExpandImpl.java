@@ -50,7 +50,9 @@ public class TraitRangeAdvisorStepLengthExpandImpl implements TraitRangeAdvisor 
 //            minInArray = 0d;
 //        }
 
-        /** how wide the new range you would like? */
+        /** how wide the new range you would like?
+         * 80% of the last range.
+         * */
         final double extremeDiff = (maxInArray - minInArray)*0.8;
 
         double narrowerMax = centreInArray + (extremeDiff / 2);
@@ -73,7 +75,7 @@ public class TraitRangeAdvisorStepLengthExpandImpl implements TraitRangeAdvisor 
     /***
      * @Description for the received formulaTraitList (as it has been selected top xx percent of best coefficient)
      * this method will figure out the range of each parameter incl. lag, rate, etc,
-     * and divide the range into xx aliquots (e.g. 100)
+     * and divide the range into xx aliquots (e.g. 100 , recommended: 5 - 6)
      * and return as a formula trait list.
      * @Params * @param formulaTraitList
      * @Return java.util.List<com.fermedu.iterative.dao.FormulaTrait>
