@@ -1,5 +1,6 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.batik.dom.GenericDOMImplementation;
@@ -48,16 +49,16 @@ public class PlotterImpl implements Plotter {
      * @param predicted
      * @Return org.jfree.chart.JFreeChart
      **/
-    private JFreeChart createCombinedChart(SampleData observed, SampleData predicted) {
+    private XYPlot createCombinedPlot(SampleData observed, SampleData predicted) {
 
         // Create a single plot containing both the scatter and line
         XYPlot plot = new XYPlot();
 
         /** create two collections */
-        XYSeries observedSeries = new XYSeries(observed.getYname().concat(" observed"));
-        observedSeries.setDescription(observed.getYname().concat(" observed"));
-        XYSeries predictedSeries = new XYSeries(predicted.getYname().concat(" predicted"));
-        predictedSeries.setDescription(predicted.getYname().concat(" predicted"));
+        XYSeries observedSeries = new XYSeries("Observed");
+        observedSeries.setDescription("Observed");
+        XYSeries predictedSeries = new XYSeries("Predicted");
+        predictedSeries.setDescription("Predicted");
         for (int index = 0; index < observed.getXValueList().size(); index++) {
             double xObserved = observed.getXValueList().get(index).doubleValue();
             double xPredicted = predicted.getXValueList().get(index).doubleValue();
@@ -73,7 +74,7 @@ public class PlotterImpl implements Plotter {
         observedDataset.addSeries(observedSeries);
 //        XYItemRenderer observedScatterRenderer = new XYLineAndShapeRenderer(false, true);    // Shapes only
         XYItemRenderer observedScatterRenderer = new XYDotRenderer();    // Shapes only
-        ValueAxis scatterDomain = new NumberAxis("time(min)");
+        ValueAxis scatterDomain = new NumberAxis("Time (min)");
         ValueAxis scatterRange = new NumberAxis("Optical Density");
         // Set the scatter data, renderer, and axis into plot
         plot.setDataset(0, observedDataset);
@@ -94,12 +95,25 @@ public class PlotterImpl implements Plotter {
         // Map the line to the second Domain and second Range
         plot.mapDatasetToDomainAxis(1, 0);
         plot.mapDatasetToRangeAxis(1, 0);
+
+        return plot;
+    }
+
+    private JFreeChart instantiateChart(String name, XYPlot plot) {
         // Create the chart with the plot and a legend
         JFreeChart chart = new JFreeChart(
-                observed.getYname().concat(CHART_TITLE_SUFFIX), JFreeChart.DEFAULT_TITLE_FONT, plot, true);
+                name, JFreeChart.DEFAULT_TITLE_FONT, plot, true);
         // Map the line to the FIRST Domain and second Range
 
         return chart;
+    }
+
+    // todo
+    private XYPlot addTraitAsSeriesStroke(FormulaTrait formulaTrait, XYPlot plot) {
+
+
+        return plot;
+
     }
 
     private void streamOutSvg(JFreeChart chart,String sampleName) {
@@ -136,8 +150,15 @@ public class PlotterImpl implements Plotter {
     public void plotBothObservedPredicted(String sampleName) {
         final SampleData observed = dataProvider.getObservedData(sampleName);
         final SampleData predicted = dataProvider.getPredictedData(sampleName);
+        final FormulaTrait formulaTrait = dataProvider.getFormulaTrait(sampleName);
+        System.out.println(formulaTrait.toString());
 
-        final JFreeChart chart = this.createCombinedChart(observed, predicted);
+        /** add both predicted and real datasets into the same plot */
+        XYPlot plot = this.createCombinedPlot(observed, predicted);
+
+        XYPlot plot2 = this.addTraitAsSeriesStroke(formulaTrait, plot);
+
+        final JFreeChart chart = this.instantiateChart(observed.getYname().concat(CHART_TITLE_SUFFIX), plot2);
         this.streamOutSvg(chart,sampleName);
 
     }

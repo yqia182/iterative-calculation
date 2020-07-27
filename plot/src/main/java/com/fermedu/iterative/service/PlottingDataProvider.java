@@ -1,5 +1,6 @@
 package com.fermedu.iterative.service;
 
+import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public interface PlottingDataProvider {
     SampleData getObservedData(String sampleName);
 
     SampleData getPredictedData(String sampleName);
+
+    FormulaTrait getFormulaTrait(String sampleName);
 
     List<String> getSampleNames();
 

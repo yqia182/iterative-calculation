@@ -67,9 +67,7 @@ class DataAccessorCsvImplTest {
 
     @Test
     void writeAllSampleResultsToCsv() {
-
-
-        final String csvFilePath = "D:\\Desktop\\result.csv";
+        final String csvFilePath = "D:\\Desktop\\2_5.csv";
 
         List<FinalResultPermanentEntity> resultList = mysqlConnector.findAllFinalResultWithHighestCoef();
 

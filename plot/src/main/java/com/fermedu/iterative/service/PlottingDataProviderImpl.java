@@ -69,6 +69,18 @@ public class PlottingDataProviderImpl implements PlottingDataProvider {
         return predictedSampleData;
     }
 
+    @Override
+    public FormulaTrait getFormulaTrait(String sampleName) {
+        /** get formula trait. select for the highest coef */
+
+        List<FinalResultPermanentEntity> entityList = finalResultRepository.findByYnameOrderByCoefficientDesc(sampleName);
+        FinalResultPermanentEntity bestCoefficientEntity = entityList.get(0);
+        FormulaTrait formulaTrait = new FormulaTrait();
+        BeanUtils.copyProperties(bestCoefficientEntity, formulaTrait);
+
+        return formulaTrait;
+    }
+
 
     @Override
     public List<String> getSampleNames() {

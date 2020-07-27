@@ -22,7 +22,7 @@ class PlotterImplTest {
 
     @Test
     void plotBothObservedPredicted() {
-        String sampleName = new String("53");
+        String sampleName = new String("3");
         plotter.plotBothObservedPredicted(sampleName);
 
     }
