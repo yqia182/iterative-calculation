@@ -1,3 +1,6 @@
+# Preview  
+[![Predicted and observed datasets](https://github.com/yqia182/iterative-calculation/blob/master/doc/3.svg "Predicted and observed datasets")](https://github.com/yqia182/iterative-calculation/blob/master/doc/3.svg "Modified Gompertz Model")
+
 # Instructions
 ## Configuration  
 ### Settings
@@ -52,7 +55,6 @@ Each combination of four values will form a formula. For each formula, the coeff
 The coef is used to evaluate whether the four values are a good fit into your dataset.
 
 There are way too many values to try out for these four parameters. Unreasonably high time complexity is a major problem with brute-force search alogorithm. Since this problem has greedy-choice properties, an alternative method, greedy algorithm is implemented in this project.
-
 
 ## Citations 
 Roncoroni, M. (2014). Quantitative trait loci mapping in winemaking yeast (Doctoral dissertation, ResearchSpace@ Auckland).
