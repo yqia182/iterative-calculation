@@ -1,5 +1,5 @@
 # Preview  
-[![Predicted and observed datasets](https://github.com/yqia182/iterative-calculation/blob/master/doc/3.svg "Predicted and observed datasets")](https://github.com/yqia182/iterative-calculation/blob/master/doc/3.svg "Modified Gompertz Model")
+[![Predicted and observed datasets](https://github.com/yqia182/iterative-calculation/blob/master/doc/3_growthcurve.png?raw=true "Predicted and observed datasets")](https://github.com/yqia182/iterative-calculation/blob/master/doc/3_growthcurve.png?raw=true "Modified Gompertz Model")
 
 # Instructions
 ## Configuration  
