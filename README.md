@@ -6,7 +6,7 @@
 ## Gompertz Modeling of Growth Curves  
 There is a modification to the Gompertz model so as to fit the model in to microorganism growth. If the population of the microorganism at a certain time is translated into optical density, then there is (Roncoroni, M., 2014),  
 
-[![Modified Gompertz Model](https://raw.githubusercontent.com/yqia182/iterative-calculation/master/doc/Gompertz_img.bmp "Modified Gompertz Model")](https://raw.githubusercontent.com/yqia182/iterative-calculation/master/doc/Gompertz_img.bmp "Modified Gompertz Model")
+[![Modified Gompertz Model](https://github.com/yqia182/iterative-calculation/blob/master/doc/Gompertz_img.bmp?raw=true "Modified Gompertz Model")](https://github.com/yqia182/iterative-calculation/blob/master/doc/Gompertz_img.bmp?raw=true "Modified Gompertz Model")
 minOD - Minimum Optical Density  
 maxOD - Maximum Optical Density (Carrying Capacity)  
 lag - The Duration of Lag Phase of the Growth  
