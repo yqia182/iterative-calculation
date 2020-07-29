@@ -78,7 +78,6 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
 
 
     /**
-     * 执行计算的主方法 . 对于一个样品
      * for one sample (one replicate), each set contains a xValueList and a yValueList
      * @return
      */
@@ -89,11 +88,10 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
         double coefficient = this.calculateCoefficient(yPredictionList);
         formulaTrait.setCoefficient(coefficient);
         return formulaTrait;
-
     }
 
     /***
-    * @Description 接收formula trait 和 sample data ， 按照模型公式计算y的预测值。
+    * @Description Based on formula trait and sample data, calculated estimates.
     * @Params * @param formulaTrait
 * @param sampleData
     * @Return com.fermedu.iterative.dao.SampleData
