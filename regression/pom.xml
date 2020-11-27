@@ -12,6 +12,12 @@
     <artifactId>regression</artifactId>
     <dependencies>
         <dependency>
+            <groupId>com.guguskill.common</groupId>
+            <artifactId>common-util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.fermedu.iterative</groupId>
             <artifactId>iterative-util</artifactId>
             <version>${iterative-util.version}</version>
@@ -27,6 +33,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
             <version>${common-math3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.guguskill.common</groupId>
+            <artifactId>common-util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
