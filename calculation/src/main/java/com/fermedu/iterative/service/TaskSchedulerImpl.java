@@ -9,6 +9,7 @@ import com.fermedu.iterative.persistence.SampleDataArranger;
 import com.fermedu.iterative.properties.IterativePathProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -130,6 +131,7 @@ public class TaskSchedulerImpl implements TaskScheduler {
      * @Params * @param
      * @Return void
      **/
+    @Async("asyncExecutor")
     @Override
     public void runAllSamples() {
         /** loop for the number of the samples */

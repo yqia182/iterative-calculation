@@ -33,9 +33,9 @@ public class CalculationSampleDoController {
     private IterativePathProperties pathProperties;
 
     @GetMapping(value = {"/all"})
-    public void sampleAll() {
+    public String sampleAll(@RequestParam(value = "msg",defaultValue = "1") String msg) {
         taskScheduler.runAllSamples();
-
+        return msg+"Success. Calculation now running. You may close this page now.";
     }
 
     @GetMapping(value = {"/one"})

@@ -3,10 +3,8 @@ package com.fermedu.iterative.formula;
 import com.fermedu.iterative.dao.FormulaTrait;
 import com.fermedu.iterative.dao.SampleData;
 import com.fermedu.iterative.mathutil.RegressionMath;
-import com.guguskill.crawl.util.BeanFactoryUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.math3.util.FastMath;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -85,13 +83,13 @@ public class GrowthCurveCalculationImpl implements GrowthCurveCalculation {
      * for one sample (one replicate), each set contains a xValueList and a yValueList
      * @return
      */
-    @Async("asyncExecutor")
+    // @Async("asyncExecutor")
     @Override
     public FormulaTrait calculateOneSampleSet(FormulaTrait formulaTrait,SampleData sampleData) {
-        GrowthCurveCalculationImpl thisBean = BeanFactoryUtil.getBeanByImplClass(GrowthCurveCalculationImpl.class);
-        thisBean.sampleData = sampleData;
-        List<Double> yPredictionList = thisBean.calculateSeriesPerGompertzFormula(formulaTrait);
-        double coefficient = thisBean.calculateCoefficient(yPredictionList);
+//        GrowthCurveCalculationImpl thisBean = BeanFactoryUtil.getBeanByImplClass(GrowthCurveCalculationImpl.class);
+        this.sampleData = sampleData;
+        List<Double> yPredictionList = this.calculateSeriesPerGompertzFormula(formulaTrait);
+        double coefficient = this.calculateCoefficient(yPredictionList);
         formulaTrait.setCoefficient(coefficient);
         return formulaTrait;
     }
